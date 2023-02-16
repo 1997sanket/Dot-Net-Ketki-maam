@@ -1,0 +1,5 @@
+C:\Users\User\Desktop\WCF\HelloWebClient\HelloWebClient\bin\HelloWebClient.dll
+C:\Users\User\Desktop\WCF\HelloWebClient\HelloWebClient\bin\HelloWebClient.pdb
+C:\Users\User\Desktop\WCF\HelloWebClient\HelloWebClient\obj\Debug\HelloWebClient.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\WCF\HelloWebClient\HelloWebClient\obj\Debug\HelloWebClient.dll
+C:\Users\User\Desktop\WCF\HelloWebClient\HelloWebClient\obj\Debug\HelloWebClient.pdb

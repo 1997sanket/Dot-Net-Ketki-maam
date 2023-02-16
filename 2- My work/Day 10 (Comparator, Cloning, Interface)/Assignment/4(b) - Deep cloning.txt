@@ -1,0 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+
+    class Address
+    {
+        private String location;
+
+        public Address(String name)
+        {
+            this.location = name;
+
+        }
+
+        public String Location
+        {
+            get { return location; }
+            set { location = value; }
+           
+        }
+    }
+
+
+    class Employee : ICloneable
+    {
+        private String name;
+        private double salary;
+        private Address a;
+
+        public Employee(String name, double salary)
+        {
+            this.name = name;
+            this.a = new Address("Mumbai");
+            this.salary = salary;
+        }
+
+
+        public Address getAddress()
+        {
+            return a;
+        }
+
+        public object Clone()
+        {
+
+
+            Employee e = (Employee)this.MemberwiseClone();
+
+            e.a = new Address("Mumbai");    //Giving new memory block to address reference of new clone Employee object (We can also call Clone here)
+
+            return e;
+        }
+
+
+        public override String ToString()
+        {
+            return name + " " + a.Location;
+        }
+    }
+
+    //Main class
+    public class Program
+    {
+        
+        static void Main(string[] args)
+        {
+
+            Employee e1 = new Employee("abc",1000); //abc Mumbai
+            
+
+            Employee e2 = (Employee)e1.Clone(); //abc Mumbai
+
+            Address a = e2.getAddress();
+            a.Location = "Gujarat";
+
+
+            Console.WriteLine(e1);  //abc Mumbai
+            Console.WriteLine(e2);  //abc Gujurat
+
+            
+            Console.ReadLine();
+
+        }
+    }
+}

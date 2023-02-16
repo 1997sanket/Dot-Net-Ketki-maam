@@ -1,0 +1,14 @@
+1. C# structure 
+
+
+2. var keyword :
+
+	Strongly typed, once given a data, it becomes of that type, resolved at compile time, used in LinQ
+
+
+3. Use of command line argument	:	
+	
+	Application where we suppose we get a file from user and read contents of the file.
+
+
+4. Versioning of Assembly(.dll) file.

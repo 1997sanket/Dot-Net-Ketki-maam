@@ -1,0 +1,141 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Practice_VS_2012
+{
+
+    abstract class Account
+    {
+        private int id;
+        private String name;
+        private double balance;
+
+
+        private static int _id = 0;
+
+        static Account()
+        {
+            Console.WriteLine("Welcome to my Bank");
+        }
+
+        public Account(String name, double balance)
+        {
+            this.id = ++_id;
+            this.name = name;
+            this.balance = balance;
+        }
+
+
+        //Read only property for ID
+        public int ID
+        {
+            get { return id; } 
+        }
+
+        //Accessible only in child class
+        protected double Balance
+        {
+            set { balance = value; }
+            get { return balance; }
+
+        }
+
+
+        public String Name
+        {
+            set 
+            {
+                if (value.Length > 15) throw new Exception("Name cannot exceed 15 chars");
+
+                else name = value;
+            }
+
+            get { return name; }
+        }
+
+
+        public void deposit(double amount)
+        {
+            balance += amount;
+        }
+
+
+        public abstract void withdraw(double amount);
+
+
+        public override String ToString()
+        {
+            return id + " " + name + " " + balance;
+        }
+
+    }
+
+
+
+    class SavingAccount : Account
+    {
+        private const int minBal = 1000;
+
+
+        public SavingAccount(String name, double balance) : base(name, balance)
+        {
+
+        }
+
+        //Overriding parent class abstract method
+        public override void withdraw(double amount)
+        {
+            if ( (amount > Balance - 1000)) throw new Exception("Min balance must be 1000");
+
+            else Balance -= amount;
+
+            Console.WriteLine("CUrrent balance = " + Balance);
+        }
+
+    }
+
+
+    class CurrentAccount : Account
+    {
+        public CurrentAccount(String name, double balance) : base(name, balance)
+        {
+
+        }
+
+        //Overriding parent class abstract method
+        public override void withdraw(double amount)
+        {
+            Balance -= amount;
+
+            Console.WriteLine("CUrrent balance = " + Balance);
+        }
+    }
+
+
+    //Main class
+    public class Program
+    {
+        
+        static void Main(string[] args)
+        {
+
+            Account[] arr = new Account[2];
+
+            arr[0] = new SavingAccount("abc", 10000);
+            arr[1] = new CurrentAccount("pqr", 20000);
+
+            arr[0].withdraw(9100);
+
+            Console.WriteLine(arr[0]);
+           
+
+            Console.ReadLine();
+
+        }
+    }
+}

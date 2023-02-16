@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Practice_VS_2012
+{
+
+    public class Animal
+    {
+        public virtual void speak()
+        {
+            Console.WriteLine("I dont know how to speak");
+        }
+
+
+    }
+
+    class Dog : Animal
+    {
+        public override void speak()
+        {
+            Console.WriteLine("Bhow bhow");
+        }
+    }
+
+
+    class Cat : Animal
+    {
+        public override void speak()
+        {
+            Console.WriteLine("Meow Meow");
+        }
+    }
+
+
+    class Donkey : Animal
+    {
+
+    }
+
+
+
+
+
+    //Main class
+    public class Program
+    {
+
+        public static void showPoly(Animal a)
+        {
+            a.speak();  //Polymorphic call
+        }
+        
+
+        static void Main(string[] args)
+        {
+
+          /*  Animal[] arr = new Animal[3];
+
+            arr[0] = new Dog();
+            arr[1] = new Cat();
+            arr[2] = new Donkey();  */
+
+            showPoly(new Dog());
+            showPoly(new Cat());
+            showPoly(new Donkey());
+
+
+            
+           
+            Console.ReadLine();
+
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<services>
+      <service name="WcfService1.Service1"  behaviorConfiguration="DServiceBehavior">
+        <endpoint address=""
+                  binding="webHttpBinding"
+                  contract="WcfService1.IService1"
+                  behaviorConfiguration="RESTEndpointBehavior" />
+      </service>
+    </services>
+
+
+
+<endpointBehaviors>
+        <behavior name="RESTEndpointBehavior">
+          <webHttp/>
+        </behavior>
+      </endpointBehaviors>
+
+

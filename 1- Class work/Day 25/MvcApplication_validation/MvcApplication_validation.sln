@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication_validation", "MvcApplication_validation\MvcApplication_validation.csproj", "{813A8F35-75AC-4E14-9BCC-AD3CE250FBD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{813A8F35-75AC-4E14-9BCC-AD3CE250FBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{813A8F35-75AC-4E14-9BCC-AD3CE250FBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{813A8F35-75AC-4E14-9BCC-AD3CE250FBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{813A8F35-75AC-4E14-9BCC-AD3CE250FBD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

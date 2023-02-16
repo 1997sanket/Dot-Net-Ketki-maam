@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Logout";
+}
+
+<h2>Sorry to see you go @Session["name"]</h2>
+
+@{
+    Session.RemoveAll();
+}

@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using CalculatorLib;
+
+namespace Practice_VS_2012
+{
+
+    class Program
+    {
+        static void Main(string[] args) 
+        {
+            Console.WriteLine(Caculator.absolute(2.2)); //2
+            Console.WriteLine(Caculator.absolute(2.7)); //3
+
+            Console.WriteLine(Caculator.floor(2.7));    //2
+
+
+            Console.WriteLine(Caculator.ceil(2.2)); //3
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}

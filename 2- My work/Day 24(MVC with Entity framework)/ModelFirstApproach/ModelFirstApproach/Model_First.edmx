@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model_First.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model_FirstStoreContainer">
+    <EntitySet Name="EmployeeTable2" EntityType="Model_First.Store.EmployeeTable2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DepartmentTable2" EntityType="Model_First.Store.DepartmentTable2" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="DepartmentTable2EmployeeTable2" Association="Model_First.Store.DepartmentTable2EmployeeTable2">
+      <End Role="DepartmentTable2" EntitySet="DepartmentTable2" />
+      <End Role="EmployeeTable2" EntitySet="EmployeeTable2" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EmployeeTable2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salary" Type="real" Nullable="false" />
+    <Property Name="DepartmentTable2Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DepartmentTable2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="DepartmentTable2EmployeeTable2">
+    <End Role="DepartmentTable2" Type="Model_First.Store.DepartmentTable2" Multiplicity="1" />
+    <End Role="EmployeeTable2" Type="Model_First.Store.EmployeeTable2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentTable2">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeTable2">
+        <PropertyRef Name="DepartmentTable2Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model_First" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model_FirstContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EmployeeTable2" EntityType="Model_First.EmployeeTable2" />
+          <EntitySet Name="DepartmentTable2" EntityType="Model_First.DepartmentTable2" />
+          <AssociationSet Name="DepartmentTable2EmployeeTable2" Association="Model_First.DepartmentTable2EmployeeTable2">
+            <End Role="DepartmentTable2" EntitySet="DepartmentTable2" />
+            <End Role="EmployeeTable2" EntitySet="EmployeeTable2" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="EmployeeTable2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Single" Name="Salary" Nullable="false" />
+          <NavigationProperty Name="DepartmentTable2" Relationship="Model_First.DepartmentTable2EmployeeTable2" FromRole="EmployeeTable2" ToRole="DepartmentTable2" />
+          <Property Type="Int32" Name="DepartmentTable2Id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DepartmentTable2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="EmployeeTable2" Relationship="Model_First.DepartmentTable2EmployeeTable2" FromRole="DepartmentTable2" ToRole="EmployeeTable2" />
+        </EntityType>
+        <Association Name="DepartmentTable2EmployeeTable2">
+          <End Type="Model_First.DepartmentTable2" Role="DepartmentTable2" Multiplicity="1" />
+          <End Type="Model_First.EmployeeTable2" Role="EmployeeTable2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DepartmentTable2">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeeTable2">
+              <PropertyRef Name="DepartmentTable2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model_FirstStoreContainer" CdmEntityContainer="Model_FirstContainer">
+    <EntitySetMapping Name="EmployeeTable2">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_First.EmployeeTable2)">
+        <MappingFragment StoreEntitySet="EmployeeTable2">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="DepartmentTable2Id" ColumnName="DepartmentTable2Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentTable2">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_First.DepartmentTable2)">
+        <MappingFragment StoreEntitySet="DepartmentTable2">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

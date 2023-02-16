@@ -1,0 +1,13 @@
+CSDL Specification
+
+.NET Framework 4 Other Versions 
+Conceptual schema definition language (CSDL) is an XML-based language that describes the entities, relationships, and functions that make up a conceptual model of a data-driven application. 
+
+This conceptual model can be used by the Entity Framework or WCF Data Services. The metadata that is described with CSDL is used by the Entity Framework to map entities and relationships that are defined in a conceptual model to a data source. For more information, see SSDL Specification and MSL Specification.
+
+CSDL is the Entity Framework's implementation of the Entity Data Model.
+
+In an Entity Framework application, conceptual model metadata is loaded from a .csdl file (written in CSDL) into an instance of the System.Data.Metadata.Edm.EdmItemCollection and is accessible by using methods in the System.Data.Metadata.Edm.MetadataWorkspace class. The Entity Framework uses conceptual model metadata to translate queries against the conceptual model to data source-specific commands.
+
+Bb399292.note(en-us,VS.100).gifNote:
+The Entity Data Model Designer (Entity Designer) stores conceptual model information in an .edmx file at design time. At build time, the Entity Designer uses information in an .edmx file to create the .csdl file that is needed by the Entity Framework at runtime.

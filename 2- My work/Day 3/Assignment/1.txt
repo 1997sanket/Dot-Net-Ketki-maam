@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice_VS_2012
+{
+
+    struct Math
+    {
+        public static int sqr(int x)
+        {
+            return x * x;
+        }
+
+        public static int cube(int x)
+        {
+            return x * x * x;
+        }
+
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args) 
+        {
+            
+
+            Console.WriteLine(Math.sqr(2));
+            Console.WriteLine(Math.cube(2));
+
+
+           
+            Console.ReadLine();
+
+        }
+    }
+}

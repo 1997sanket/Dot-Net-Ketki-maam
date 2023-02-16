@@ -1,0 +1,9 @@
+1. The concept is similar to static block of Java
+
+2. It can be used to initialize static members. Or do some important job at class loading time.
+
+3. Is called when class gets loaded. (So called only once)
+
+4. Doesn't have any access modifiers, because it wont make sense. As it is only going to be called by CLR.
+
+5. One class can have only 1 static constructor.

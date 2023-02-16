@@ -1,0 +1,11 @@
+1. It is same as what we use in JavaScript. 
+
+2. It is resolved at runtime.
+
+3. It is different that 'var'. 'var' once given value it becomes of that type.
+
+4. dynamic can be given any value any time. Eg:
+
+	dynamic x = 10;
+
+	x = "Hello";

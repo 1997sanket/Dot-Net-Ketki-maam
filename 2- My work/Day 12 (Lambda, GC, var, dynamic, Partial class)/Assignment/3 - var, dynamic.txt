@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+
+
+
+namespace Practice_VS_2012
+{
+
+    class Employee
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public double Salary { get; set; }
+
+        public override String ToString()
+        {
+            return Name+ " " + Salary;
+        }
+    }
+    
+    public class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+
+            Object e1 = new Employee() { Name = "abc", ID = 1, Salary = 1000 };
+            Console.WriteLine(e1.ToString()); 
+
+
+
+            var e2 = new Employee() { Name = "pqr", ID = 2, Salary = 1000 };
+            Console.WriteLine(e2.ToString()); 
+
+
+
+            dynamic e3 = new Employee() { Name = "xyz", ID = 3, Salary = 1000 };
+            Console.WriteLine(e3.ToString());  //Intellisense doesn't work here
+
+
+
+            Console.ReadLine();
+
+        }
+
+
+    }
+}

@@ -1,0 +1,18 @@
+Html.RenderPartial():
+
+The RenderPartial helper method 
+
+
+is same as the Partial method except that it returns void and writes resulted html of a specified partial view into a http response stream directly. 
+
+ @{
+        Html.RenderPartial("_HeaderNavBar");   
+    }
+
+Note : RenderPartial returns void, so a semicolon is required at the end and so it must be enclosed in the braces. 
+or
+@Html.Partial("_HeaderNavBar")  
+
+
+
+@Html.Partial() method doesn't need to be in code block because it returns a html string. 

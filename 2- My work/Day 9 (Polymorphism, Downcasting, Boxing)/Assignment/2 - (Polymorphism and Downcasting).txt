@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+
+
+    class Person
+    {
+        public virtual void dojob()
+        {
+            Console.WriteLine("Doing job");
+        }
+    }
+
+
+    class Programmer : Person
+    {
+        public override void dojob()
+        {
+            Console.WriteLine("Coding");
+        }
+
+        public void testing()
+        {
+            Console.WriteLine("I am testing code also");
+        }
+    }
+
+    class Dancer : Person 
+    {
+       
+    }
+
+
+    class Singer : Person
+    {
+        public override void dojob()
+        {
+            Console.WriteLine("Singing");
+        }
+    }
+    
+
+    //Main class
+    public class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            Person[] arr = new Person[3];
+
+            arr[0] = new Programmer();
+            arr[1] = new Dancer();
+            arr[2] = new Singer();
+
+            foreach (Person p in arr)  
+            {
+                p.dojob();  //Polymorphic call
+
+                //Downcasting and calling method of that specific object
+                if (p is Programmer)
+                {
+                    ((Programmer)p).testing();
+                }
+            }
+            
+           
+
+            Console.ReadLine();
+
+        }
+    }
+}

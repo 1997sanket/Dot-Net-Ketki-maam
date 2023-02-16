@@ -1,0 +1,17 @@
+	Soap							Binary						XML
+
+1. all members gets serialized				All  members get serialized			Only private members with public 
+													getter setter will be serialized
+
+
+2. requires [Serializable]				[Serializable]					No need
+
+
+3.							Fastest
+
+
+4. Platform and language 				Not						Platform and language independent.
+   independent.		
+
+
+5. Widely used						Not						Old

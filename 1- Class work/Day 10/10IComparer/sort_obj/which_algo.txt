@@ -1,0 +1,7 @@
+This method uses the Array.Sort method, which applies the introspective sort as follows:
+
+    If the partition size is fewer than 16 elements, it uses an insertion sort algorithm.
+
+    If the number of partitions exceeds 2 * LogN, where N is the range of the input array, it uses a Heapsort algorithm.
+
+    Otherwise, it uses a Quicksort algorithm.

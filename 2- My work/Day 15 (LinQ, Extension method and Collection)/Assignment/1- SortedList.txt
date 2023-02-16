@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+
+    public class Student
+    {
+        public int Roll { get; set; }
+        public String Name { get; set; }
+
+
+        public override string ToString()
+        {
+            return Roll + " " +  Name;
+        }
+    }
+
+
+    public class Program
+    {
+
+
+
+        static void Main(string[] args)
+        {
+            Student s1 =  new Student() { Roll = 1, Name = "abc" };
+            Student s2 = new Student() { Roll = 2, Name = "pqr" };
+            Student s3 = new Student() { Roll = 3, Name = "xyz" };
+
+            SortedList<String, Student> sl = new SortedList<String, Student>();
+
+            sl.Add(s2.Name, s2);
+            sl.Add(s3.Name, s3);
+            sl.Add(s1.Name, s1);
+
+
+            foreach(var s in sl)
+            {
+                Console.WriteLine(s);
+            }
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

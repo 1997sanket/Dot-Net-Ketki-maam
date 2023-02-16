@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Modelempdept" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ModelempdeptContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Empdacs" EntityType="Modelempdept.Empdac" />
+    <EntitySet Name="Deptdacs" EntityType="Modelempdept.Deptdac" />
+    <AssociationSet Name="DeptdacEmpdac" Association="Modelempdept.DeptdacEmpdac">
+      <End Role="Deptdac" EntitySet="Deptdacs" />
+      <End Role="Empdac" EntitySet="Empdacs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Empdac">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" />
+    <Property Type="Single" Name="Salary" Nullable="false" />
+    <NavigationProperty Name="Deptdac" Relationship="Modelempdept.DeptdacEmpdac" FromRole="Empdac" ToRole="Deptdac" />
+    <Property Type="Int32" Name="DeptdacId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Deptdac">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" />
+    <NavigationProperty Name="Empdacs" Relationship="Modelempdept.DeptdacEmpdac" FromRole="Deptdac" ToRole="Empdac" />
+  </EntityType>
+  <Association Name="DeptdacEmpdac">
+    <End Type="Modelempdept.Deptdac" Role="Deptdac" Multiplicity="1" />
+    <End Type="Modelempdept.Empdac" Role="Empdac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deptdac">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empdac">
+        <PropertyRef Name="DeptdacId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+
+   public interface ITaxToGov
+    {
+        void payTax(double amt);
+    }
+
+
+    class MyIndia : ITaxToGov
+    {
+
+        public void payTax(double amt)
+        {
+            Console.WriteLine(0.5 * amt);
+        }
+    }
+
+
+    class MyEurope : ITaxToGov
+    {
+
+        public void payTax(double amt)
+        {
+            Console.WriteLine(0.4 * amt);
+        }
+    }
+   
+
+    //Main class
+    public class Program
+    {
+
+        public static void perform(ITaxToGov a, double amt)
+        {
+            a.payTax(amt);
+        }
+        
+        static void Main(string[] args)
+        {
+
+            perform(new MyIndia(), 1000);
+            perform(new MyEurope(), 1000);
+          
+
+            Console.ReadLine();
+
+        }
+    }
+}

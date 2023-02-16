@@ -1,0 +1,13 @@
+Object.equals(p1,p2)	-> Safer than non static method
+
+
+1. It provides provison for null pointer exception i.e if either of the reference passed is null then this
+   method will return 'false'
+		
+		ELSE
+			It will call virtual method on each of them and check further.
+
+
+
+2. If we directly use virtual equals (Like in JAVA) then there may be a problem of NPE, if either of the 
+   reference is null

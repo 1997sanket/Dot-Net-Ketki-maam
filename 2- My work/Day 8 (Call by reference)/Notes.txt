@@ -1,0 +1,21 @@
+1. Call by value(java, Cpp, C#) vs address(C, Cpp) vs reference(Cpp, C#)
+
+2. Diff between ref and out keyword
+
+	ref should be initialized before passing, out gets initialized in the method it is passed.
+
+3. Method hiding 
+	
+	If parent class method is not virtual and we redefine it in child class.
+
+	Parent p = new Child();
+	p.show();	//Parent show will be called
+
+
+4. Method overloading
+
+	If parent class method is virtual and we redefine it using 'override' keyword. 
+
+	Parent p = new Child();
+	p.show();	//Child show will be called (Runtime Polymorphism)
+	

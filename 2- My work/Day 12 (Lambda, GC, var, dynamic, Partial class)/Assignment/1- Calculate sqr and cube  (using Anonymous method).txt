@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+
+
+
+namespace Practice_VS_2012
+{
+    delegate void MyDelegate(int x);
+
+    static class Calculator
+    {
+        
+
+        public static void calculate(int x)
+        {
+            //Square
+            MyDelegate obj = delegate(int y) 
+            {
+                Console.WriteLine("Square = " + x* x); 
+            };
+
+            //Cube
+            obj += delegate(int z)
+            {
+                Console.WriteLine("Cube = " + x * x * x); 
+            };
+
+
+            //Calling delegate reference
+            obj(x);
+        }
+    }
+
+    
+    public class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+
+            Calculator.calculate(2);
+
+            Console.ReadLine();
+
+        }
+
+
+    }
+}

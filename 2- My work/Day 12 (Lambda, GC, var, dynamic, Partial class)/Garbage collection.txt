@@ -1,0 +1,29 @@
+1. GC is on demand basis. 
+
+2. Internally it creates like a storage to store the objects.
+
+3. Suppose if the storage is full, and now we want to make 1 more object, that time GC will check in the 
+   storage, which objects are unreferenced. Suppose there are 3 unreferenced objects. And we need space for 
+   only 1, then GC will remove any one of the 3 objects, and the 2 will stay there. And then our newly
+   created object can occupy that place.
+
+4. To optimize this process, internally 3 generations of objects are present to store the objects.
+   They are Generation 0, 1, 2.
+
+5. All newly created objects go on Generation 0.
+
+6. Suppose in the above example, when GC came to clean up, he only cleaned 1 object. So in the first swipe
+   only 1 object was cleaned, so the other 2 will go to generation 1.
+
+7. GC process always starts from generation 0. Rarely it will go to genration 1 and even rarely to genration 2.
+
+8. Object which will stay active throughout the application will most likely be in generation 2. Like 
+   'Windows' object in a desktop app.
+
+9. We can request for Garbage collection using "GC.Collect()".
+
+10. We can even say which generation we want the GC to work on. "GC.Collect(0, GCCollectionMode.Forced)"
+    this way we are forcing the garbage collection in genertion 0.
+
+11. Before calling GC though it is highly recommended that we use "GC.WaitForPendingFinalizers()" so that 
+    the object which are going to be garbage collected release the resources it is using first.

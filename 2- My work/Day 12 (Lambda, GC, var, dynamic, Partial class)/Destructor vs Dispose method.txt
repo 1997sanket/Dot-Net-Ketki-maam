@@ -1,0 +1,13 @@
+1. Both are used for releasing resources.
+
+2. Here destructor is same as "finalize()" method of Java. It internally calls "finalize()" method
+
+3. It is called right before object is going to be Garbage collected.
+
+4. That is the problem with Destructor, we cannot predict when it will be called. So the resources it is 
+   using will stay for that long.
+
+5. "Dispose()" is a method inside "IDisposable" interface. "DBConnection", "Stream", etc. classes implement 
+    this interface and they have overridden this method. Whenever we want to releases resources we just 
+    have to call this method. (Same as "obj.close()" method of Java)
+

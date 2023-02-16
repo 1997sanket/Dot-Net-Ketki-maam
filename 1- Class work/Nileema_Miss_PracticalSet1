@@ -1,0 +1,4 @@
+File --> New --> Project --> Web --> ASP.NET Web Application (.Net Framework) (or ASP.NET Core Web Application) -->Select --> Contains multiple options - Empty, MVC, Web API.
+
+- Create MVC webapi application. Run it. Go through each folder and files. Explain working of web api project.
+- Create webapi empty application. Run it. Go through each folder and files. Explain working of web api project.

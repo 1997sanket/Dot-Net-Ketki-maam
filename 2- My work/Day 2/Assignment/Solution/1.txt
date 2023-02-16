@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice_VS_2012
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter no 1");
+            String str1 = Console.ReadLine();
+
+            Console.WriteLine("Enter no 2");
+            String str2 = Console.ReadLine();
+
+            float f1;
+            float f2;
+
+            Boolean b1 = float.TryParse(str1, out f1);
+
+
+            Boolean b2 = float.TryParse(str2, out f2);
+
+
+            if (b1 == true && b2 == true)
+            {
+                float result = f1 + f2;
+
+                Console.WriteLine("Output = " + result);
+            }
+
+
+            Console.ReadLine();
+
+        }
+    }
+}

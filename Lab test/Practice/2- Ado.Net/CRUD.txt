@@ -1,0 +1,150 @@
+ class Employee
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public float Salary { get; set; }
+
+        public override string ToString()
+        {
+            return ID + " " + Name + " " + Salary;
+        }
+    }
+
+
+
+    class Connection 
+    {
+
+        public static SqlConnection getConnection()
+        {
+            //Not hardcoding database connection
+            String connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;  //@"Data Source=(localdb)\Projects;Initial Catalog=mydb;Integrated Security=True;";
+
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            return connection;
+        }
+    }
+
+
+
+    class EmployeeBusinessLayer
+    {
+
+        private SqlConnection connection;
+        private DataSet ds;
+        private SqlDataAdapter sda;
+
+
+
+        //Display all Employees using Disconnected architecture(DataSet)
+        public void displayAllEmployees()
+        {
+            connection = Connection.getConnection();
+
+            //Create DataSet to mimic our DataBase
+            ds = new DataSet();
+
+            sda = new SqlDataAdapter("select * from Employee", connection);
+
+            sda.FillSchema(ds, SchemaType.Source, "Employee");  //Copy rules and regulation of the database.
+
+            sda.Fill(ds, "Employee");   //COpy full database in dataset
+
+            //Console.WriteLine(ds.Tables[0].ToString()); //table name
+
+            //ds.Tables[0].TableName = "Employee";    //Changing table name
+
+            //Console.WriteLine(ds.Tables[0].ToString());
+
+            DataTable dt = ds.Tables["Employee"];   //Getting our table
+
+            //Iterating
+            foreach(DataRow row in dt.Rows)
+            {
+                foreach (DataColumn col in dt.Columns)
+                {
+                    Console.Write(row[col] + "\t");
+                }
+
+                Console.WriteLine("\n--------------------------------------");
+            }
+
+
+
+        }
+
+
+
+
+        //Insert using disconnected arch.
+        public void insertEmployee(Employee e)
+        {
+            DataRow row = ds.Tables["Employee"].NewRow(); //Create new row
+
+            //Add data to the row
+            row["Name"] = e.Name;
+            row["Salary"] = Convert.ToSingle(e.Salary);
+
+            //Add row to the table
+            ds.Tables["Employee"].Rows.Add(row);
+
+            //Add SqlDataAdapter object to the SqlCommandBuilder
+            SqlCommandBuilder scb = new SqlCommandBuilder(sda); //This is required to build the SQL command which will fire the query in DB
+
+            int count = sda.Update(ds, "Employee"); //Opens connection, fires query, closes connection
+
+            Console.WriteLine("Added new Employee");
+
+        }
+
+
+
+
+        //Update
+        public void updateEmployee(Employee e)
+        {
+            //First get that Employee from the database with the ID from the given Employee object
+            DataRow row = ds.Tables["Employee"].Rows.Find(e.ID);
+
+            //Now update the record
+            row["Name"] = e.Name.ToString();
+            row["Salary"] = Convert.ToSingle(e.Salary);
+
+            //Sending SqlDataAdapter object to the command builder to build command for the particular schema/db
+            SqlCommandBuilder scb = new SqlCommandBuilder(sda);
+
+            //Sending DataSet objet to the update method and the name of table to be updated.
+            int count = sda.Update(ds, "Employee");
+
+
+            Console.WriteLine("Update "+ count +" Employee");
+
+        }
+
+
+
+        //Delete
+        public void deleteEmployee(int id)
+        {
+            //Get row first
+            DataRow row = ds.Tables["Employee"].Rows.Find(id);
+
+
+            //Remove row
+            row.Delete();
+
+
+            SqlCommandBuilder scb = new SqlCommandBuilder(sda);
+
+            //Update database
+            int count = sda.Update(ds, "Employee");
+
+            Console.WriteLine("Deleted " + count + " tables");
+
+        }
+
+        
+    }
+

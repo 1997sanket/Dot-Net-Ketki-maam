@@ -1,0 +1,6 @@
+C:\Sanket CDAC\.Net\Lab test\Practice\2- Ado.Net\Ado_net_practice\Ado_net_practice\bin\Debug\Ado_net_practice.exe.config
+C:\Sanket CDAC\.Net\Lab test\Practice\2- Ado.Net\Ado_net_practice\Ado_net_practice\obj\Debug\Ado_net_practice.csprojResolveAssemblyReference.cache
+C:\Sanket CDAC\.Net\Lab test\Practice\2- Ado.Net\Ado_net_practice\Ado_net_practice\bin\Debug\Ado_net_practice.exe
+C:\Sanket CDAC\.Net\Lab test\Practice\2- Ado.Net\Ado_net_practice\Ado_net_practice\bin\Debug\Ado_net_practice.pdb
+C:\Sanket CDAC\.Net\Lab test\Practice\2- Ado.Net\Ado_net_practice\Ado_net_practice\obj\Debug\Ado_net_practice.exe
+C:\Sanket CDAC\.Net\Lab test\Practice\2- Ado.Net\Ado_net_practice\Ado_net_practice\obj\Debug\Ado_net_practice.pdb

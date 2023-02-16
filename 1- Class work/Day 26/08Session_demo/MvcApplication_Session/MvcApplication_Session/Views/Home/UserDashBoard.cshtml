@@ -1,0 +1,19 @@
+﻿@model MvcApplication_Session.Models.User_Login
+
+@{
+    ViewBag.Title = "UserDashBoard";
+}
+
+<h2>UserDashBoard</h2>
+<fieldset>  
+    <legend> User DashBoard </legend>  
+  Welcome
+@if(Session["UserName"] != null)
+{ 
+     @Session["UserName"].ToString() ;
+    
+                                     @TempData["k"];
+} 
+    @Html.ActionLink("logout","Logoutuser") 
+    <h1>try to refresh page see temp data goes away</h1>
+</fieldset>  

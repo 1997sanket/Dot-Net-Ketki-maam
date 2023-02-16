@@ -1,0 +1,12 @@
+SSDL Specification
+
+.NET Framework 4 Other Versions 
+Store schema definition language (SSDL) is an XML-based language that describes the storage model of an Entity Framework application.
+
+In an Entity Framework application, storage model metadata is loaded from a .ssdl file (written in SSDL) into an instance of the System.Data.Metadata.Edm.StoreItemCollection and is accessible by using methods in the System.Data.Metadata.Edm.MetadataWorkspace class.
+
+
+ The Entity Framework uses storage model metadata to translate queries against the conceptual model to store-specific commands.
+
+
+The Entity Data Model Designer (Entity Designer) stores storage model information in an .edmx file at design time. At build time the Entity Designer uses information in an .edmx file to create the .ssdl file that is needed by the Entity Framework at runtime

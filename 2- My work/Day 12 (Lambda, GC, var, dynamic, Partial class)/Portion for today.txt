@@ -1,0 +1,11 @@
+1. Anonymous method, Lambda
+
+2. Garbage collection
+
+3. Nullable for value type data. Eg : int? a = 10;
+
+4. Destructor, Dispose
+
+5. Partial classes
+
+6. dynamic keyword

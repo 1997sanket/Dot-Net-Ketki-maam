@@ -1,0 +1,5 @@
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087\3- Console Application\ConsoleApplication_Banking\ConsoleApplication_Banking\bin\Debug\ConsoleApplication_Banking.exe.config
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087\3- Console Application\ConsoleApplication_Banking\ConsoleApplication_Banking\bin\Debug\ConsoleApplication_Banking.exe
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087\3- Console Application\ConsoleApplication_Banking\ConsoleApplication_Banking\bin\Debug\ConsoleApplication_Banking.pdb
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087\3- Console Application\ConsoleApplication_Banking\ConsoleApplication_Banking\obj\Debug\ConsoleApplication_Banking.exe
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087\3- Console Application\ConsoleApplication_Banking\ConsoleApplication_Banking\obj\Debug\ConsoleApplication_Banking.pdb

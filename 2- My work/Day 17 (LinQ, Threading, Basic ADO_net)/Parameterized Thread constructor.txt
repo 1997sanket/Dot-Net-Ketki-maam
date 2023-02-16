@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+
+    class ThreadMethod
+    {
+        public void run(Object x)
+        {
+            int total = 0;
+            int[] arr = (int[])x;
+
+              for (int i = 0; i < arr.Length; i++)
+                {
+                    total += arr[i];
+                }
+
+              Console.WriteLine("Total = " + total);
+        }
+    }
+
+   //Thread class param constructor which will return some value
+    public class Program
+    {
+
+        static void Main(string[] args)
+        {
+            int[] arr = {1, 2, 3};
+
+            //Thread t = new Thread(new ThreadMethod().run);
+
+
+            new Thread(x =>
+                {
+                    int total = 0;
+                    int[] xrr = (int[])x;
+
+                    for (int i = 0; i < xrr.Length; i++)
+                    {
+                        total += xrr[i];
+                    }
+
+                    Console.WriteLine("Total = " + total);
+                }).Start(arr);  //Passing int array here. start method call my delegate method and then it works on my int array passed)
+
+          // t.Start(arr);
+
+            
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

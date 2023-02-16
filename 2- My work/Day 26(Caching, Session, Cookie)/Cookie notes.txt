@@ -1,0 +1,11 @@
+1. Cookies are used to store client specific data which improves user 
+   experience in our website. 
+
+2. Whenever a new user hits the server a cookie is created for that user 
+   and the cookie is sent in the response to the user.
+
+3. When user makes some request, the cookie is again sent to the server and 
+   using this cookie we can do stuff.
+
+4. Eg: when a client logs in, after login we can display the name of the client 
+   and a welcome message.

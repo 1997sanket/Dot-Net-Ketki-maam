@@ -1,0 +1,11 @@
+1. Create a WCF Service application.
+
+2. In the IService interface only keep the GetData method.
+
+3. In WebConfig file below the "system.serviceModel" copy paste the "services"
+   tag.
+
+4. In "behaviors" tag copy paste "endpointBehaviors"
+
+5. Make sure to add [WebInvoke(...)] attribute over our service methods
+   

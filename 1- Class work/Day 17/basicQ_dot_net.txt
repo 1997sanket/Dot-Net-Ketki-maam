@@ -1,0 +1,190 @@
+ What is .NET Framework?
+Q2. What is an IL?
+Q3. What is Common Type System (CTS)?
+Q5. Which is the root namespace for fundamental types in .NET Framework?
+Q6. What is Microsoft Intermediate Language (MSIL)?
+Q7.What is Common Language Specification (CLS)?
+Q8.What is difference between System.String and System.StringBuilder classes?
+Q9. What is the difference between constants and read-only variables that are used in programs?
+Q10. Differentiate between Boxing and Unboxing.
+Q11. What is the difference between arrays and collection?
+Q12 What is a class and Objects?
+Q13. What is a multicast delegate?
+Q14. Why is the virtual keyword used in code?
+Q15. Can you declare an overridden method to be static if the original method is not static?
+Q16. What is a delegate?
+Q17. What is a namespace?
+Q18. What are abstract classes? What are the distinct characteristics of an abstract class?
+Q19. What is a static constructor?
+Q20. Differentiate between an abstract class and an interface
+Q21. What is an assembly?
+Q22. What are the different types of assemblies? Explain them in detail.
+--------------------------------------------------------------------------------
+Q1. Default access modifier for struct and top level class--public or internal
+Q2 Default ACcess modifier for member of class/struct -private
+Q3 Write all signature of Main() method
+Q4. Sbyte is ___-128 127
+Q5. short a,b  -32767
+ a=32767; b=2; write output for addtion of this number ans= -32768
+Q6.all primitive datatypes derrived from?- ValueType abstract class
+Q8. String is _______ - immutable
+Q9 Reference type occupy _byte ==4 byte
+Q10. Every object has same copy of instance variable __  t/f  true
+Q11. All datatype are internaly____ structure
+Q12. Cross Language inter operability is possble becauseof
+____________ CLR
+Q13. int32 is same as _____ datatype = int
+Q14. which keyword is used , which will throw exception if it is overflow. == checked
+
+Q15. List all user define datatype =class, enum, struct
+Q16 list all sealed class =string, GC, SQLConnection, StringBUilder,
+Q17 List all abstract class +ValueType,Array,Stram,TextReader,TextWriter
+Q18. can you create object of valueType. no because it is abstract class
+Q20 What is return type of GetType()? ==TYPE
+Q21 String is _Immutable
+Q22 StringBuilder is in _____ namesapce =System.Text
+Q23______ method is used to push string in string pool ==String.Intern(str)
+Q24.Equals method is overridden in ___________ class =ValueType ,String ,and String Bulider Anonymous type
+Q25.which is best method to convert string to int ==TryPrse(str,out a)
+Q1 static constructor can have parameter??? NO
+Q2Access modifer for static constructor is by default ==public
+Q3. is readonly variable can be access by classname.variable. ==NO
+Q4.Everey object will have own copy of static variable? ==NO
+Q3.Static data loaded in memory before instance data?=yes 
+Q4.can I declare static const int a=50? No const is by default static
+Q5.static constructor are called when you create object of that a class in which static constructor is created? true
+Q6.Can i declare static variable inside method? ==no
+Q7.const variable resolves when you use that variable =No is resolves at compile time
+Q8. For faster loading of data we should use static data.=yes
+Q9.can you use static and readonly key word together?=yes
+Q10. can you use static and instance noargs  constructor in one class=yes
+Q11.can I declare const variable in method?=yes
+Q12.why you need constructor overloading?
+Q13.readonly variable must initialised when you declare or in a constructor t/f =true
+Q14.can you subclass static class?=no. because it is a sealed class
+Q15. can I create object of static class?=no.
+
+Q16 how many static constructor can i declare in a class=one
+
+Q17 static class can have only static data t/f=true
+
+Q18.in a static method can i create a object of class and access a variable?=yes
+
+Q19.parent class has virtual method area; child class has overridden area and also has add method you have created array of parent class- object how you will call add method in a loop
+parent[] p=new parent[2];
+
+p[0]=new child()
+p[1]=new child()
+
+ for(int i =0,i>p.length;i++)
+{ p[i].area();//upcasting
+ 
+((child)p[i]).add();//down casting
+
+}
+
+Q21.can abstract class be private=no.
+
+Q22. can I write override string ToString(){return "hi";}
+ ans =no -public override string ToString()
+
+Q23 does virtual method must be public? yes
+
+Q24.what is difference between virtual and abstract method.
+
+Q23.difference between overloading and overridding?
+
+Q24.can i create object of abstract class?=NO
+
+Q25. Why u have constructor in abstrac class=child can call parent class constructor using base(keyword)
+
+Q25.Why u have constructor in static class when u can not create object of it. CLR will call this constructor
+
+Q26.what is difference between abstract class and interface?
+
+Q27.What is difference between static class and sealed class. you can create object of sealed class,and you can not create object of static class
+
+Q29 list all predefine interface=IClonable,IEnumerble,Icompareble,Icomperor
+Q30.what is upcasing and down casting give example?
+Q31.use of base key woprd?= to call parent class constructor
+Q32. use of new key word in c#
+Q33.is size of array required at compile time?=no
+Q34. Have you used inheritance in your project?=yes all class r derived from Object
+
+Q35.What is Ienumerator and Ienumerable:
+
+Q36.Which classes have implemented Ienumerable interface: Array,Collection class
+
+Q37.what is access modifer for method in interface.=bye default it is public and abstract
+
+Q38.is interface derived from Object?=No
+
+Q39.Why you get tostring method when u use reference of interface?: because class which implement interface is derived from Object class
+Q40.use of this key word?
+Q41.can you overload static method?: Yes
+Q42 can you override static method?:No
+Q43.what is delegate?: It is function pointer wrapped in class
+Q44.User define delegate is derived from?: Delegate class
+Q55 can I create object of user define delegate?:Yes
+Q56.What is multicast delegate?
+Q57.where you will use muticast delegate?
+Q58.if all method is returning value and if you call  method useing multicast delegate which method's return value you can captured:Last value of mthod call
+
+Q59.can you return value using  lamda expression?=Yes
+
+Q60.Where should I use anonymous method?=When you have small task and does not require intance member,
+
+Q61.can anonymoue method use ref key word?:NO
+
+Q62.if u r using lambda expression having variable int r,
+can you use same variable in outer method?: No
+
+Q63.will this code compile? yes
+delegate void chk();
+
+  chk x=() =>Console.WriteLine("hi");
+    x();
+
+Q64. what this following code is doing?
+
+delegate void add(int i);
+in entry point class: add d=n=>n+2;
+  int r=d(5);
+
+
+Q65.List all abstract class 
+
+delegate, array,stream,textreader,textwriter, Atttribute,Muticast Delegate,Value Type,Enum,Type,
+
+Q66.can i create object of TextReader class?:NO
+
+Q67.Types of file serialization  =binary,soap,xml.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

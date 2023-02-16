@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Practice_VS_2012
+{
+    
+
+
+    //Main class
+    public class Program
+    {
+        class MyClass
+        {
+            public int sqr(int n)
+            {
+                Console.WriteLine("Int");
+                return n * n;
+            }
+
+            public double cube(double n)
+            {
+                Console.WriteLine("double");
+                return n * n;
+            }
+        }
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine(new MyClass().sqr(2));
+
+
+         
+            
+            Console.ReadLine();
+
+        }
+    }
+}

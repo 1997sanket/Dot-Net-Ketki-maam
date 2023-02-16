@@ -1,0 +1,170 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+/*
+    Main idea of this example is Decoupling.
+ * 
+ * HEre publisher is separate. 
+ * 
+ * Subscriber is separate
+ * 
+ * Class where subscribing happens is separate.
+*/
+
+
+namespace Practice_VS_2012
+{
+
+    //Declaring a UserDefined delegate
+    delegate void myDelegate(double salary, double bonus, String name);
+
+
+    //Publisher
+    abstract class Employee
+    {
+        //Above delegate as instance member
+        public event myDelegate myEvent;
+
+
+        private int id;
+        private String name;
+        private double salary;
+
+        private static int _id = 0;
+        protected const double perBonus = 5000;
+        protected const double tempBonus = 1000;
+
+        public Employee(String name, double salary)
+        {
+            this.id = ++_id;
+            this.name = name;
+            this.salary = salary;
+        }
+
+        public String Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        public double Salary
+        {
+            get { return salary; }
+            set { salary = value; }
+        }
+
+
+        //Call this method when bonus is given
+        public void onBonusReceived(double bonus)
+        {
+            //Atleast 1 subscriber is there
+            if (myEvent != null)
+            {
+                myEvent(salary, bonus , name);
+            }
+        }
+
+        public abstract void giveBonus();
+    }
+
+
+
+    class PermanentEmployee : Employee
+    {
+
+        public PermanentEmployee(String name, double salary)
+            : base(name, salary)
+        {
+
+        }
+
+       
+        public override void giveBonus()
+        {
+            Console.WriteLine("Giving bonus {0}...", perBonus);
+
+            //Calling this method so that our delegate is called
+            onBonusReceived(perBonus);
+        }
+    }
+
+
+    class TemporaryEmployee : Employee
+    {
+        public TemporaryEmployee(String name, double salary)
+            : base(name, salary)
+        {
+
+        }
+
+
+        
+        public override void giveBonus()
+        {
+            Console.WriteLine("Giving bonus {0}...", tempBonus);
+
+            //Calling this method so that our delegate is called
+            onBonusReceived(tempBonus);
+        }
+    }
+
+
+    //Subscriber
+    static class Subscriber
+    {
+        //This is the message we need to call whenever bonus is given to an Employee
+        public static void message(double salary, double bonus, String name)
+        {
+            Console.WriteLine("Salary = {0},    Bonus = {1},    Name = {2}", salary, bonus, name);
+        }
+    }
+
+
+
+    //Class where subscribing will happen
+    public class Program
+    {
+
+       
+        static void Main(string[] args)
+        {
+
+            Employee[] err = new Employee[2];
+
+            err[0] = new PermanentEmployee("abc", 50000);
+            err[1] = new TemporaryEmployee("pqr", 30000);
+
+
+            /*
+                What I have to do ?
+             * 
+             * as soon as 'giveBonus()' method is called, messages should be displayed how much and whom we are giving bonuses to
+             */ 
+
+
+            //Subscribing (For each employee object's delegate reference we are subscribing it with the messagge)
+            foreach(Employee e in err) {
+
+                e.myEvent += Subscriber.message;
+                //e.myEvent += new myDelegate(Subscriber.message);  This syntax is also allowed
+
+            }
+
+
+            //Giving bonuses
+            foreach (Employee e in err)
+            {
+                e.giveBonus();
+            }
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+/*
+    Main idea of this example is Decoupling.
+ * 
+ * HEre publisher is separate. 
+ * 
+ * Subscriber is separate
+ * 
+ * Class where subscribing happens is separate.
+*/
+
+
+namespace Practice_VS_2012
+{
+
+    //Declaring delegate for an event
+    delegate void MyDelegate();
+
+
+    //It will have delegate as instance member. Job is to publish to all its subscribers
+    class Publisher
+    {
+        //Delegate as instance member, with event keyword, so that it cannot be called outside of this class
+        public event MyDelegate myEvent;
+
+        public void raiseEvent()
+        {
+            if (myEvent != null) myEvent();
+        }
+    }
+
+
+    //Its methods should be subscribed to the event
+    class Subscriber
+    {
+        public void sendSMS()
+        {
+            Console.WriteLine("Sending SMS...");
+        }
+
+
+        public void sendEmail()
+        {
+            Console.WriteLine("Sending Email...");
+        }
+    }
+    
+
+    //Class where subscribing will happen
+    public class Program
+    {
+
+       
+        static void Main(string[] args)
+        {
+
+            //Create Publisher object
+            Publisher publisher = new Publisher();
+
+            //Create Subscriber object
+            Subscriber subscriber = new Subscriber();
+
+
+            //subscribe to the event
+            publisher.myEvent += subscriber.sendEmail;
+            publisher.myEvent += subscriber.sendSMS;
+
+
+            //Call method to raise event
+            publisher.raiseEvent();
+            
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

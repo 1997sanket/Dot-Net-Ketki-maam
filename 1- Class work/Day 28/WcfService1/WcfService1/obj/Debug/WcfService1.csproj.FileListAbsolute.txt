@@ -1,0 +1,4 @@
+C:\Users\Shiram Mantri\Desktop\PGDAC_20_net\WcfService1\WcfService1\bin\WcfService1.dll
+C:\Users\Shiram Mantri\Desktop\PGDAC_20_net\WcfService1\WcfService1\bin\WcfService1.pdb
+C:\Users\Shiram Mantri\Desktop\PGDAC_20_net\WcfService1\WcfService1\obj\Debug\WcfService1.dll
+C:\Users\Shiram Mantri\Desktop\PGDAC_20_net\WcfService1\WcfService1\obj\Debug\WcfService1.pdb

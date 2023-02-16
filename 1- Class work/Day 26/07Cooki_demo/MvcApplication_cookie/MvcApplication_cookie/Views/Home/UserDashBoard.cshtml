@@ -1,0 +1,21 @@
+﻿@model MvcApplication_cookie.Models.User_Login
+
+@{
+    ViewBag.Title = "UserDashBoard";
+}
+
+<h2>UserDashBoard</h2>
+  
+<fieldset>  
+    <legend > User DashBoard </legend> 
+   @{ 
+   HttpCookie cookie = Request.Cookies["UserDetail"];
+           
+ if (cookie!= null)
+ { 
+    <text>    Welcome @cookie["Name"] </text>  
+ } 
+ else
+ {  <text> no data in cookie</text>}
+}
+</fieldset>  

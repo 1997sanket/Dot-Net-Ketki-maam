@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication_modefirstdemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ModeldemoContainer empdb = new ModeldemoContainer();
+            var result = empdb.Empdemoes.FirstOrDefault<Empdemo>();
+            Console.WriteLine(result.Deptdemo);
+            var emplist = empdb.Empdemoes.ToList<Empdemo>();
+            foreach (var r in emplist)
+                Console.WriteLine("{0}   {1}  {2}   {3} {4}", r.Id, r.Name, r.Salary, r.DeptdemoId,r.Deptdemo.Name);
+            adddata();
+            deletedata();
+            eagerload();
+            groupbydept();
+            Console.WriteLine();
+        }
+
+        static void groupbydept()
+        {  ModeldemoContainer empdb = new ModeldemoContainer();
+               
+              var emp = empdb.Empdemoes.GroupBy(s => s.Deptdemo.Name );
+
+            foreach (var groupItem in emp)
+            {
+                Console.WriteLine(groupItem.Key);
+
+                foreach (var e in groupItem)
+                {
+                    Console.WriteLine("{0} {1} {2 }",e.Id ,e.Name, e.Salary  );
+                }
+
+            }
+        }
+        
+        
+        static void eagerload()
+        {
+            ModeldemoContainer empdb = new ModeldemoContainer();
+            var result = from rng in empdb.Empdemoes.Include("Deptdemo") select rng;
+          
+            foreach (var r in result)
+                Console.WriteLine("{0}   {1}  {2}   {3} {4} ", r.Id, r.Name, r.Salary, r.DeptdemoId,r.Deptdemo.Name);
+        
+        }
+        static void adddata()
+        {
+            ModeldemoContainer db = new ModeldemoContainer();
+            Empdemo p1 = new Empdemo();
+            //p1.Id = 7;
+            p1.Name = "rinku";
+            p1.Salary = 50000;
+            p1.DeptdemoId = 1;
+            db.Empdemoes.Add(p1);
+            db.SaveChanges();
+
+        }
+        static void deletedata()
+        {
+            ModeldemoContainer db = new ModeldemoContainer();
+            Empdemo p1 = db.Empdemoes.Find(1);
+            db.Empdemoes.Remove(p1);
+
+            db.SaveChanges();
+            
+
+        }
+
+    }
+}
+  

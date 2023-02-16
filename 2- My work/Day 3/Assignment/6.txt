@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice_VS_2012
+{
+
+    class MyClass
+    {
+        public int sal = 10;
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args) 
+        {
+            MyClass m = new MyClass();
+
+            Console.WriteLine("Data type = {0}  ParenType = {1} ", m.GetType(), m.GetType().BaseType);
+
+            Console.ReadLine();
+
+        }
+    }
+}

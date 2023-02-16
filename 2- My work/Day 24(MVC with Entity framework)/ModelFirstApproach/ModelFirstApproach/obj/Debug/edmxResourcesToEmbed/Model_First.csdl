@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model_First" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model_FirstContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EmployeeTable2" EntityType="Model_First.EmployeeTable2" />
+    <EntitySet Name="DepartmentTable2" EntityType="Model_First.DepartmentTable2" />
+    <AssociationSet Name="DepartmentTable2EmployeeTable2" Association="Model_First.DepartmentTable2EmployeeTable2">
+      <End Role="DepartmentTable2" EntitySet="DepartmentTable2" />
+      <End Role="EmployeeTable2" EntitySet="EmployeeTable2" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EmployeeTable2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" />
+    <Property Type="Single" Name="Salary" Nullable="false" />
+    <NavigationProperty Name="DepartmentTable2" Relationship="Model_First.DepartmentTable2EmployeeTable2" FromRole="EmployeeTable2" ToRole="DepartmentTable2" />
+    <Property Type="Int32" Name="DepartmentTable2Id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DepartmentTable2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" />
+    <NavigationProperty Name="EmployeeTable2" Relationship="Model_First.DepartmentTable2EmployeeTable2" FromRole="DepartmentTable2" ToRole="EmployeeTable2" />
+  </EntityType>
+  <Association Name="DepartmentTable2EmployeeTable2">
+    <End Type="Model_First.DepartmentTable2" Role="DepartmentTable2" Multiplicity="1" />
+    <End Type="Model_First.EmployeeTable2" Role="EmployeeTable2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentTable2">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeTable2">
+        <PropertyRef Name="DepartmentTable2Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

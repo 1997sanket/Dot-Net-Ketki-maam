@@ -1,0 +1,6 @@
+1. Difference in static equals and non static equals method
+	static equals internally calls virtual nonstatic method, static equals doesn't throw exception
+
+2. Calling "reference equals()" on 2 primitives with same value. What happens ?
+
+	Internally they get boxed in 2 separate object, so they wont be equal

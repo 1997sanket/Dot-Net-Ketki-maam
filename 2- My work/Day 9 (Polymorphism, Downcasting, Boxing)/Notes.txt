@@ -1,0 +1,1 @@
+1. Parent class's access modifier should be same or higher than than child.

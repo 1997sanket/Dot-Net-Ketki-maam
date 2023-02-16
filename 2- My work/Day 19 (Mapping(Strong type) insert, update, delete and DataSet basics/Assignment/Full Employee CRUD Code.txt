@@ -1,0 +1,253 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+using System.Configuration;
+using System.Data.SqlClient;
+
+
+
+namespace Practice_VS_2012
+{
+
+    class Employee
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public float Salary { get; set; }
+
+        public override string ToString()
+        {
+            return ID + " " + Name + " " + Salary;
+        }
+    }
+
+
+
+    class Connection 
+    {
+
+        public static SqlConnection getConnection()
+        {
+            //Not hardcoding database connection
+            String connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;  //@"Data Source=(localdb)\Projects;Initial Catalog=mydb;Integrated Security=True;";
+
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            return connection;
+        }
+    }
+
+
+
+    class EmployeeBusinessLayer
+    {
+
+        //Get employee by ID
+        public Employee search(int id)
+        {
+            SqlConnection connection = Connection.getConnection();
+
+            Employee e = new Employee();
+
+            String sql = "select * from Employee where Id = @ID";
+
+            SqlCommand cmd = new SqlCommand(sql, connection);
+
+            cmd.Parameters.AddWithValue("@ID", id); //Parameterized query
+
+            connection.Open();
+            SqlDataReader result = cmd.ExecuteReader();
+
+            //if (result.HasRows) Console.WriteLine("Yes");
+
+            while(result.Read())
+            {
+                //Mapping
+                e.ID = Convert.ToInt32(result["Id"]);
+                e.Name = result["Name"].ToString();
+                e.Salary = Convert.ToSingle(result["Salary"]);
+
+                break;
+            }
+
+            connection.Close();
+            return e;
+
+        }
+
+
+
+
+        //Get employees by name
+        public List<Employee> searchByName(String name)
+        {
+            SqlConnection connection = Connection.getConnection();
+
+            List<Employee> employees = new List<Employee>();
+
+            String sql = "select * from Employee where name = @Name";
+
+            SqlCommand cmd = new SqlCommand(sql, connection);
+
+            cmd.Parameters.AddWithValue("@Name", name);
+
+            connection.Open();
+
+            SqlDataReader result = cmd.ExecuteReader();
+
+            while (result.Read())
+            {
+                Employee e = new Employee();
+                //Mapping
+                e.ID = Convert.ToInt32(result["Id"]);
+                e.Name = result["Name"].ToString();
+                e.Salary = Convert.ToSingle(result["Salary"]);
+
+
+                employees.Add(e);
+            }
+
+            connection.Close();
+            return employees;
+        }
+
+
+
+
+        //Insert new Employee using Strongly type(Mapping with class Employee) using Stored procedure
+        public void insetEmployee(Employee e)
+        {
+            SqlConnection connection = Connection.getConnection();
+
+            
+
+            SqlCommand cmd = new SqlCommand("spInsertEmployee", connection);
+            //cmd.Parameters.AddWithValue("@Id", e.ID);  ID is auto generated
+            cmd.Parameters.AddWithValue("@Name", e.Name);
+            cmd.Parameters.AddWithValue("@Salary", e.Salary);
+
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            connection.Open();
+
+            int count = cmd.ExecuteNonQuery();
+
+            Console.WriteLine("Inserted " + count + " record");
+
+            connection.Close();
+        }
+
+
+
+
+        //Update Employee
+        public void updateEmployee(int id, String name)
+        {
+            SqlConnection connection = Connection.getConnection();
+
+            String sql = "update Employee set Name = @Name where Id = @Id";
+
+            SqlCommand cmd = new SqlCommand(sql, connection);
+            cmd.Parameters.AddWithValue("@Id", id);  
+            cmd.Parameters.AddWithValue("@Name", name);
+            
+
+            connection.Open();
+
+            int count = cmd.ExecuteNonQuery();
+
+            Console.WriteLine("Updated " + count + " record");
+
+            connection.Close();
+        }
+
+
+
+
+
+        //Display all Employees using Disconnected architecture(DataSet)
+        public void displayAllEmployees()
+        {
+            SqlConnection connection = Connection.getConnection();
+
+            //Create DataSet to mimic our DataBase
+            DataSet ds = new DataSet();
+
+            SqlDataAdapter sda = new SqlDataAdapter("select * from Employee", connection);
+
+            sda.Fill(ds);   //COpy full database in dataset
+
+            Console.WriteLine(ds.Tables[0].ToString()); //table name
+
+            ds.Tables[0].TableName = "Employee";    //Changing table name
+
+            Console.WriteLine(ds.Tables[0].ToString());
+
+            DataTable dt = ds.Tables["Employee"];   //Getting our table
+
+            //Iterating
+            foreach(DataRow row in dt.Rows)
+            {
+                foreach (DataColumn col in dt.Columns)
+                {
+                    Console.Write(row[col] + "\t");
+                }
+
+                Console.WriteLine("\n--------------------------------------");
+            }
+
+
+
+        }
+
+        
+    }
+
+
+
+
+    public class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            EmployeeBusinessLayer ebl = new EmployeeBusinessLayer();
+
+            /*Employee e = ebl.search(1);
+
+           if(e!=null)  Console.WriteLine(e.ToString());
+
+
+
+           List<Employee> employees = ebl.searchByName("Ashok");
+
+           if (employees != null)
+           {
+               foreach (Employee employee in employees)
+               {
+                   Console.WriteLine(employee.ToString());
+               }
+           } 
+
+            ebl.insetEmployee(new Employee() { ID = 7, Name = "Atif", Salary = 300 });  
+
+
+            ebl.updateEmployee(5, "Harpic Man");    */
+
+            ebl.displayAllEmployees();
+            
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+
+
+  }

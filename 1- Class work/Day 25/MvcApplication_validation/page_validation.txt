@@ -1,0 +1,7 @@
+
+               if (ModelState.IsValid)
+               {
+                
+                   employeeBusinessLayer.AddEmmployee(employee);
+                   return RedirectToAction("Index");
+               }

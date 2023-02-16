@@ -1,0 +1,164 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+
+    class Employee
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public double Salary { get; set; }
+        public String Address { get; set; }
+
+        public Employee(int id, String name, double salary, String address)
+        {
+            ID = id;
+            Name = name;
+            Salary = salary;
+            Address = address;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0}   {1}    {2}     {3}", ID, Name, Salary, Address);
+        }
+    }
+
+
+    public class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            List<Employee> list = new List<Employee>();
+
+            list.Add(new Employee(1, "abc", 1000, "Vile Parle"));
+            list.Add(new Employee(2, "pqr", 2000, "Andheri"));
+            list.Add(new Employee(3, "xyz", 70000, "Kandivali"));
+            list.Add(new Employee(4, "Vaman", 80000, "Andheri"));
+            
+
+
+            //Display all Employee details
+            Console.WriteLine("All Employees ");
+            (from x in list select x).ToList().ForEach(x=> Console.WriteLine(x));
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            //Display all Employees living at Andheri
+            Console.WriteLine("Employees living in Andheri");
+            (from x in list where x.Address.ToLower().Equals("andheri") select x).ToList().ForEach(x=>Console.WriteLine(x));
+
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            //Total of all salaries
+            Console.WriteLine("Total Salary = " + (from x in list select x.Salary).Sum());
+
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+
+            //All Employees who's names start with "v"
+            Console.WriteLine("All employees who's name starts with 'v'");
+            (from x in list where x.Name.ToLower().StartsWith("v") select x).ToList().ForEach(x=> Console.WriteLine(x));
+
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+
+            //Count no of employees
+            Console.WriteLine("Employee count : " + (from x in list select x).Count());
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            //Employees with salary > 50k
+            Console.WriteLine("Employees with salary > than 50k");
+            (from x in list where x.Salary > 50000 select x).ToList().ForEach(x=>Console.WriteLine(x));
+
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+
+            //Min, Max and Avg salary
+            Console.WriteLine("Min salary : " + (from x in list select x.Salary).Min());
+            Console.WriteLine("Max salary : " + (from x in list select x.Salary).Max());
+            Console.WriteLine("Avg salary : " + (from x in list select x.Salary).Average());
+
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+             
+            //Name in asc order
+            Console.WriteLine("Name in ascending order");
+            (from x in list orderby x.Name select x.Name).ToList().ForEach(x=>Console.WriteLine(x));
+
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+
+            //Salary in descending order
+            Console.WriteLine("Salary in descending order");
+            (from x in list orderby x.Salary descending select x.Salary).ToList().ForEach(x=>Console.WriteLine(x));
+
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+
+            //ID and Name who's salary is < than 20k
+            Console.WriteLine("Id and name who's salary is < than 20k");
+            (from x in list where x.Salary < 20000 select x).ToList().ForEach(x=>Console.WriteLine(x));
+
+
+
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

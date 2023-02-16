@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Practice_VS_2012
+{
+
+
+    //Main class
+    public class Program
+    {
+        
+
+        static void Main(string[] args)
+        {
+
+            int data = 0;
+            int i, j, nr;
+
+            Console.WriteLine("Enter no of rows");
+            Boolean b1 = int.TryParse(Console.ReadLine(), out nr);  //Got no of rows
+
+
+
+            int [][] arr = new int[nr][];     //Made an 2D array with 3 rows, but unknown cols
+
+            
+            for (int k = 0; k < arr.Length; k++)
+            {
+                Console.WriteLine("Enter no of cols for row {0}", k+1);
+                int num = int.Parse(Console.ReadLine());
+                arr[k] = new int[num];
+            }
+
+            //Input
+            for (i = 0; i < arr.Length; i++)
+            {
+                for (j = 0; j < arr[i].Length; j++)
+                {
+                  
+                    Boolean b = int.TryParse(Console.ReadLine(), out data);
+
+                    //Console.WriteLine(b);
+
+                    arr[i][j] = data;
+
+                  
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+
+
+
+            for (i = 0; i < arr.Length; i++)
+            {
+                for (j = 0; j < arr[i].Length; j++)
+                {
+
+                    Console.Write(arr[i][j] + " ");
+                }
+
+                Console.WriteLine();
+            }
+
+          
+
+            Console.ReadLine();
+
+        }
+    }
+}

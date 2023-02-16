@@ -1,0 +1,16 @@
+1. When we send data to the View, we send an object. It could be Entity object
+   itself or Collection of an Entity.
+
+2. But what if we have relationships between different Entities. For eg:
+   A Department has many Employees. 
+
+3. Suppose we want to Edit detail of an Employee, so we click Edit link 
+   and we get a form filled with that Employee details already. In that form 
+   we can also see the Department in which that Employee belongs to.
+
+4. How is the possible ? In the Edit[HttpGet] controller we can only send 
+   1 type of object to the View, so how can we send Department object for that
+   particular Employee as well ?? 
+
+5. So, the answer is ViewBag. In the Viewbag we can add the department for that
+   employee and thus we can access that view bag in the View for the Action.

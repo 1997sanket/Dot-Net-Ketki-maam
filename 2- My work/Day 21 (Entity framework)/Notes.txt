@@ -1,0 +1,31 @@
+1. Entity framework is ORM of .Net.
+
+2. It makes our life so much easier.
+
+3. Here we can design our Database tables in Visual studio and the respective Classes
+   and Tables in the database will created.
+
+4. It has very basic CRUD operations and we can even use LinQ with it.
+
+5. We get a Businesss layer class which inherits 'DbContext' class which has 'DbSet' of 
+   our table/class.
+
+6. Using this class's object we do our CRUD operations.
+
+
+7. Suppose we add a new Employee, it first gets added in the set, to do permanent changes in the
+   database table we need to use 'saveChanges()' method.
+
+8. Scalar property - Properties which are not foreign key(which do not relate this table with other table/tables). Eg : Name, Salary, etc
+
+9. Navigation property - Properties which are used to relate this table with other table/tables. Eg : DepartmentID as a foregin key in
+			 Employee table.
+
+10. Lazy loading 
+	By default loading is Lazy. That is when we fetch all the Employees from the database, Department objects are not retrieved.
+        They will be retrieved only when we need them, only when w call a certain method/property on a Department object of a particular 
+        Employee. This is used mostly.
+
+
+11. Eager loading
+	When we fetch all Employees, their respective Department objects are also retrieved.

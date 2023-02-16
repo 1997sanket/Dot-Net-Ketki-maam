@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+
+   
+
+
+    public class Program
+    {
+
+
+
+        static void Main(string[] args)
+        {
+            String[] arr = new String[3];
+            //int[] brr = new int[5];
+
+            Console.WriteLine("Enter elements");
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = Console.ReadLine();
+            }
+
+            //Sending lambda to Func delegate which is parameter of Where function
+            var brr = arr.Where(name => name.ToLower().StartsWith("v"));
+
+           
+            Console.WriteLine("Filtered elements are");
+            foreach (var x in brr)
+            {
+                Console.WriteLine(x);
+            }
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

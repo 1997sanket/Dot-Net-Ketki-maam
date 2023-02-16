@@ -1,0 +1,16 @@
+Change in Create View
+
+@Html.PasswordFor()
+@Html.TextAreaFor(,new {rows=30, cols=20})
+<img src="~/@Item.Photo">
+
+
+          @Html.DropDownListFor(x => x.Gender , new[] {
+                            new SelectListItem() {Text = "Male",
+                                Value = "Male"},
+                            new SelectListItem() {Text = "FeMale",
+                                Value = "FeMale"}
+                        }, "Choose Gender")
+            
+@Html.RadioButtonFor(model => model.Gender,"Male") @Model.Gender
+@Html.RadioButtonFor(model => model.Gender,"Female") @Model.Gender

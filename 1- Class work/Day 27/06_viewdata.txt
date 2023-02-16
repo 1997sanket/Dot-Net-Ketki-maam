@@ -1,0 +1,71 @@
+
+1. What is ViewData
+2. What is ViewBag
+3. Difference between ViewData and ViewBag 
+
+
+both are short life value become null when  redirection occurs  
+
+Both ViewData and ViewBag are used to pass data from a controller to a view.
+ ViewData is a dictionary of objects that 
+are stored and retrieved using strings as keys. 
+
+The syntax of ViewData is very similar to that of ViewState, SessionState and ApplicationState.
+ViewData requires typecasting for complex datatype and check for null values to avoid error
+// Storing data in ViewData
+
+ViewData["YourData"] = "SomeData";
+
+// Retrieving data from ViewData
+string strData = ViewData["YourData"].ToString();
+
+ViewData does not provide compile time error checking. For example, if you mis-spell the key names you wouldn't get any compile time error. You get to know about the error only at runtime.
+
+ViewBag uses the dynamic feature that was introduced in to C# 4.0. 
+It allows an object to have properties dynamically added to it.  
+
+ViewBag doesnot require typecasting for complex data type
+Using ViewBag the above code can be rewritten as below.
+
+// Storing data in ViewBag
+ViewBag.YourData = "SomeData";
+
+// Retrieving data from ViewBag
+string strData = ViewBag.YourData;
+
+Just like ViewData, ViewBag does not provide compile time error checking. For example, if you mis-spell the property name, you wouldn't get any compile time error. You get to know about the error only at runtime.
+
+Internally ViewBag properties are stored as name/value pairs in the ViewData dictionary.
+
+Please Note: To pass data from controller to a view, It's always a good practice to use strongly typed view models instead of using 
+ViewBag & ViewData. Strongly typed view models  provide compile time error checking. We will discuss  later  
+IndexView
+ 
+@{
+    ViewBag.Title = "Countries List";
+}
+
+<h2>Countries List</h2>
+
+<ul>
+
+@foreach (string strCountry in (List<String>) ViewData.Countries)
+{
+    <li>@strCountry</li>
+}
+
+</ul>
+
+ public ActionResult Index()
+        {
+            // Store the list of Countries in ViewBag.  
+            ViewData["Countries"] = new List<string>()   {   "India",
+	     				        "US",
+          					  "UK",
+             					 "Canada"
+           				 };
+
+            // Finally return a view
+            return View();
+        }
+

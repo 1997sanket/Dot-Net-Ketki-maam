@@ -1,0 +1,83 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+
+    class Student
+    {
+        private String name;
+        private int rollno;
+        private double marks;
+
+        private static int _rollno = 0;
+
+        public Student(String name, double marks)
+        {
+            this.rollno = ++_rollno;
+            this.name = name;
+            this.marks = marks;
+        }
+
+
+        public override String ToString()
+        {
+            return name + " " + marks;
+        }
+
+
+    }
+
+
+
+
+    class School
+    {
+        private Student[] srr = new Student[3];
+
+        static School()
+        {
+            Console.WriteLine("Welcome to SChool");
+        }
+
+        public School()
+        {
+            srr[0] = new Student("abc", 20);
+            srr[1] = new Student("pqr", 30);
+            srr[2] = new Student("xyz", 40);
+        }
+
+
+        public Student[] getStudents()
+        {
+            return srr;
+        }
+    }
+   
+
+    //Main class
+    public class Program
+    {
+        
+        static void Main(string[] args)
+        {
+
+            School s = new School();
+
+            Student[] srr = s.getStudents();
+
+            foreach (Student stud in srr)
+            {
+                Console.WriteLine(stud);
+            }
+
+
+            Console.ReadLine();
+
+        }
+    }
+}

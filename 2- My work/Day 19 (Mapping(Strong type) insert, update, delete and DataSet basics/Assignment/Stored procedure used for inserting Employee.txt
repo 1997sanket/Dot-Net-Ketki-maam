@@ -1,0 +1,9 @@
+CREATE PROCEDURE spInsertEmployee
+                        
+	   @Name	nvarchar(max),
+       @Salary    float
+	              
+AS 
+BEGIN 
+  INSERT INTO dbo.Employee ( Name , Salary)    VALUES (@Name, @Salary)
+ End

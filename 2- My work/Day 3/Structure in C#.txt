@@ -1,0 +1,9 @@
+1. All primitive datatypes in C# are structure internally. And their parent class is Object.
+
+2. Structure is located on stack. Even if we use 'new' keyword.
+
+3. Structure has default no arg constructor, but we cannot use it. We can use param constructor but we have
+   to initialize all the members.
+
+4. Generally structure is used when we want around 16bytes of members inside structure. Because structure is 
+   inside stack, acessing it is faster than on heap.

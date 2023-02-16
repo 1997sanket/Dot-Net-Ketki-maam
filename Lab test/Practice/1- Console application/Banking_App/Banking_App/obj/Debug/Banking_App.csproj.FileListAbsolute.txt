@@ -1,0 +1,6 @@
+C:\Sanket CDAC\.Net\Lab test\Practice\Banking_App\Banking_App\bin\Debug\Banking_App.exe.config
+C:\Sanket CDAC\.Net\Lab test\Practice\Banking_App\Banking_App\bin\Debug\Banking_App.exe
+C:\Sanket CDAC\.Net\Lab test\Practice\Banking_App\Banking_App\bin\Debug\Banking_App.pdb
+C:\Sanket CDAC\.Net\Lab test\Practice\Banking_App\Banking_App\obj\Debug\Banking_App.csprojResolveAssemblyReference.cache
+C:\Sanket CDAC\.Net\Lab test\Practice\Banking_App\Banking_App\obj\Debug\Banking_App.exe
+C:\Sanket CDAC\.Net\Lab test\Practice\Banking_App\Banking_App\obj\Debug\Banking_App.pdb

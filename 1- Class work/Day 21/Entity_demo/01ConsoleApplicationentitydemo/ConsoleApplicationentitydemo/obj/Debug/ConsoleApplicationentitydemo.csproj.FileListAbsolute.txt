@@ -1,0 +1,15 @@
+C:\Users\Shiram Mantri\Desktop\PGDAC_20_net\ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\bin\Debug\ConsoleApplicationentitydemo.exe.config
+C:\Users\Shiram Mantri\Desktop\PGDAC_20_net\ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\bin\Debug\ConsoleApplicationentitydemo.exe
+C:\Users\Shiram Mantri\Desktop\PGDAC_20_net\ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\bin\Debug\ConsoleApplicationentitydemo.pdb
+C:\Users\Shiram Mantri\Desktop\PGDAC_20_net\ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\bin\Debug\EntityFramework.dll
+C:\Users\Shiram Mantri\Desktop\PGDAC_20_net\ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\bin\Debug\EntityFramework.xml
+C:\Users\Shiram Mantri\Desktop\PGDAC_20_net\ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\obj\Debug\ConsoleApplicationentitydemo.exe
+C:\Users\Shiram Mantri\Desktop\PGDAC_20_net\ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\obj\Debug\ConsoleApplicationentitydemo.pdb
+D:\dot_net\Day_wise\A google classroom\Entity_demo\01ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\bin\Debug\ConsoleApplicationentitydemo.exe.config
+D:\dot_net\Day_wise\A google classroom\Entity_demo\01ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\obj\Debug\ConsoleApplicationentitydemo.exe
+D:\dot_net\Day_wise\A google classroom\Entity_demo\01ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\obj\Debug\ConsoleApplicationentitydemo.pdb
+D:\dot_net\Day_wise\A google classroom\Entity_demo\01ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\bin\Debug\ConsoleApplicationentitydemo.exe
+D:\dot_net\Day_wise\A google classroom\Entity_demo\01ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\bin\Debug\ConsoleApplicationentitydemo.pdb
+D:\dot_net\Day_wise\A google classroom\Entity_demo\01ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\bin\Debug\EntityFramework.dll
+D:\dot_net\Day_wise\A google classroom\Entity_demo\01ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\bin\Debug\EntityFramework.xml
+D:\dot_net\Day_wise\A google classroom\Entity_demo\01ConsoleApplicationentitydemo\ConsoleApplicationentitydemo\obj\Debug\ConsoleApplicationentitydemo.csprojResolveAssemblyReference.cache

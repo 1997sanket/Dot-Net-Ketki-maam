@@ -1,0 +1,3 @@
+config.Formatters.Remove(config.Formatters.XmlFormatter); 
+
+ in WebApiConfig.cs file

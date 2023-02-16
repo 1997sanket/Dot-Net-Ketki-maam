@@ -1,0 +1,65 @@
+		Java										.NET
+
+
+1.	JVM									CLR
+
+
+2. 	jar									dll
+
+
+3. 	.class file								.exe file
+
+
+4. 	byte code								MSIL code
+
+
+5. 	package	(physical folder)						namespace(Logical/No physical)
+
+
+6. 	int x = Integer.parseInt(<someString>)					Boolean b = <datatype>.TryParse(<someString>, out x)
+
+
+7. 	JDK, JRE, Eclipse							.Net, CLR, Visual studio
+
+	
+8. 	method by default virtual											
+										cannot override, need to make them virtual
+
+
+9.	Primitives are present.							Pure OO, Even primitives are internally structure
+
+
+10. 	default access modifier is called 'default'				default access modifier is internal for class and private 	
+	(applicable within same package)					instance members. (applicable within same assembly)
+
+
+11.	static block								static constructor 
+
+
+12.	Utility class like 'Collections' is normal class			Utility class is a static class	with static methods
+	with static methods
+
+
+
+13.	In String class equals(), hashCode() and toString() 			Equals(), GetHashCode(), toString() and '==' operator are
+	is overridden								overridden.
+
+
+14.	In Java for String content is checked by equals()			In C# String content is checked by equals(), Object.equals() and
+	method 									'==' operator.	
+
+
+15.	String reference is checked by '==' operator				String reference is checked by 'ReferenceEquals()' method
+
+
+16.	intern() checks whether String is there in string pool			Here intern() only pushes to pool. 'isIntern()' checks whether
+	or not, if yes then return its reference ELSE create new		its already present in Pool or not.
+	and return the reference.
+
+		
+17. 	String s = "Hello" (Literal, Giving value at compile time		String s = "Hello" (Literal, Giving value at compile time
+			    thats why on Pool)							    thats why on Pool)	
+	or else it goes on Heap							or else it goes on Heap		   									    
+	
+
+	

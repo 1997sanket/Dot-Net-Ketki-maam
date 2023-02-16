@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CalculatorLib
+{
+    public static class Caculator
+    {
+
+        public static int sqr(int x)
+        {
+            return x * x;
+        }
+
+        public static int absolute(double x)
+        {
+            int temp = (int)x;
+
+            if ((x - temp) <= 0.5) return temp;
+
+            else return (temp + 1);
+
+        }
+
+        public static int floor(double x)
+        {
+            return ((int)x);
+        }
+
+        public static int ceil(double x)
+        {
+            int temp = (int)x;
+
+            return (temp + 1);
+        }
+    }
+}

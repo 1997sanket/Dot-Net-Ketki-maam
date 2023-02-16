@@ -1,0 +1,7 @@
+C:\Sanket CDAC\.Net\Lab test\Practice\4- WCF REST\WcfService1\WcfService1\obj\Debug\WcfService1.csprojResolveAssemblyReference.cache
+C:\Sanket CDAC\.Net\Lab test\Practice\4- WCF REST\WcfService1\WcfService1\bin\WcfService1.dll
+C:\Sanket CDAC\.Net\Lab test\Practice\4- WCF REST\WcfService1\WcfService1\bin\WcfService1.pdb
+C:\Sanket CDAC\.Net\Lab test\Practice\4- WCF REST\WcfService1\WcfService1\bin\EntityFramework.dll
+C:\Sanket CDAC\.Net\Lab test\Practice\4- WCF REST\WcfService1\WcfService1\bin\EntityFramework.xml
+C:\Sanket CDAC\.Net\Lab test\Practice\4- WCF REST\WcfService1\WcfService1\obj\Debug\WcfService1.dll
+C:\Sanket CDAC\.Net\Lab test\Practice\4- WCF REST\WcfService1\WcfService1\obj\Debug\WcfService1.pdb

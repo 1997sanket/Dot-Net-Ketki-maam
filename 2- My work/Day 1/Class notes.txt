@@ -1,0 +1,45 @@
+1. Framework class library, is the library which is common for all the .Net languages.
+
+2. LinQ - Programmer only need to know this and he can fetch data from DB, Array, Collection, etc.
+
+3. Entity framework = Hibernate
+
+4. Parallel LinQ - In multi-threading in Java, we know context switching happens. Internally at a time 
+   processor is only doing 1 job. But in Parallel LinQ, ACTUALLY 2 jobs will be happening at the same time, 
+   so it's a lot faster.
+
+
+5. JIT compiler compiles MSIL code to native code. "Just in time" because, code will be compiled only when 
+   needed. Eg : A class will be compiled only when it is used.
+   Three types of JIT are available in .Net	a) Pre-JIT	b)Econo- Jit	c)JIT
+
+   a) Pre-JIT	- All the MSIL is converted to Native code directly. (Faster)
+   b) Econo-JIT - Suppose in small device like mobile, where memory is less. If 2 methods are compiled 
+                  and enter in memory, and now we need some other methods, that time these 2 methods will 
+		  be removed.
+   c) JIT	- It is same as Java JIT (Default, works on demand basis)
+
+
+6. When we compile C# code we get '.exe' file. But its not actually executable file(Not binary). It contains
+   MSIL (like Java's byte code). "Metadata" is also in the same file.
+
+
+7. CLR only understands 'Managed code'(MSIL code). We can use Pointers in C# also(it was given for backward 
+   compatibility). But if use Pointers then CLR won't come into picture and our code will become  
+   'UnManaged code'. (We don't really use pointers now a days)
+
+
+8. CLS- Common language specification : When merging various .Net languages, we need to follow certain 
+   specifications. CTS (Common type system) says while merging various languages we need to use common 
+   data types, which is also understood by the CLR.
+
+
+9. In C# even primitive data types are derived from Object class.
+
+
+10. When we run a console application. We get scoree.dll file also, which has _CorexeMain() function. This function is called by the OS
+    which then executes the MSIL code. Because OS cannot directly talk with the MSIL code.
+
+
+11. "namespace" - Logical grouping of related classes and to avoid name collision. Logical because unlike package we dont have a physical 
+    folder holding classes. For eg : System is a name space which has Console static class.

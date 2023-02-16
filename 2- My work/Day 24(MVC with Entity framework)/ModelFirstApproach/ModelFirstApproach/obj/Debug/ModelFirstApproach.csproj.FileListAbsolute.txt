@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\ModelFirstApproach\ModelFirstApproach\bin\Debug\ModelFirstApproach.exe.config
+C:\Users\User\Desktop\ModelFirstApproach\ModelFirstApproach\bin\Debug\ModelFirstApproach.exe
+C:\Users\User\Desktop\ModelFirstApproach\ModelFirstApproach\bin\Debug\ModelFirstApproach.pdb
+C:\Users\User\Desktop\ModelFirstApproach\ModelFirstApproach\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\ModelFirstApproach\ModelFirstApproach\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\ModelFirstApproach\ModelFirstApproach\obj\Debug\ModelFirstApproach.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\ModelFirstApproach\ModelFirstApproach\obj\Debug\ModelFirstApproach.exe
+C:\Users\User\Desktop\ModelFirstApproach\ModelFirstApproach\obj\Debug\ModelFirstApproach.pdb
+C:\Sanket CDAC\.Net (Ketki Maam)\2- My work\Day 24(MVC with Entity framework)\ModelFirstApproach\ModelFirstApproach\bin\Debug\ModelFirstApproach.exe.config
+C:\Sanket CDAC\.Net (Ketki Maam)\2- My work\Day 24(MVC with Entity framework)\ModelFirstApproach\ModelFirstApproach\obj\Debug\ModelFirstApproach.exe
+C:\Sanket CDAC\.Net (Ketki Maam)\2- My work\Day 24(MVC with Entity framework)\ModelFirstApproach\ModelFirstApproach\obj\Debug\ModelFirstApproach.pdb

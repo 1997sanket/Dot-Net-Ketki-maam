@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model_empdept" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model_empdeptContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EMPs" EntityType="Model_empdept.EMP" />
+    <EntitySet Name="Depts" EntityType="Model_empdept.Dept" />
+    <AssociationSet Name="DeptEMP" Association="Model_empdept.DeptEMP">
+      <End Role="Dept" EntitySet="Depts" />
+      <End Role="EMP" EntitySet="EMPs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EMP">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" />
+    <Property Type="Single" Name="Salary" Nullable="false" />
+    <NavigationProperty Name="Dept" Relationship="Model_empdept.DeptEMP" FromRole="EMP" ToRole="Dept" />
+    <Property Type="Int32" Name="DeptId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dept">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" />
+    <NavigationProperty Name="EMPs" Relationship="Model_empdept.DeptEMP" FromRole="Dept" ToRole="EMP" />
+  </EntityType>
+  <Association Name="DeptEMP">
+    <End Type="Model_empdept.Dept" Role="Dept" Multiplicity="1" />
+    <End Type="Model_empdept.EMP" Role="EMP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dept">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EMP">
+        <PropertyRef Name="DeptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

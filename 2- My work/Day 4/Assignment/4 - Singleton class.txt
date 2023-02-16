@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using CalculatorLib;
+
+namespace Practice_VS_2012
+{
+
+    class Singleton
+    {
+        private static Singleton s = null;
+
+        //So Objects cannot be created outside this class
+        private Singleton()
+        {
+
+        }
+
+
+        //Giving reference to user
+        public static Singleton getSingleton()
+        {
+
+            if (s == null)
+            {
+                s = new Singleton();
+            }
+
+            return s;
+        }
+
+
+        public void disp()
+        {
+            Console.WriteLine("Hello from instance method");
+        }
+
+
+    }
+
+    public class Program
+    {
+
+        static Program()
+        {
+            Console.WriteLine("Welcome to Singleton program ");
+        }
+
+        static void Main(string[] args) 
+        {
+           
+            Singleton obj = Singleton.getSingleton();
+
+            obj.disp();
+
+            Console.ReadLine();
+
+        }
+    }
+}

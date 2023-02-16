@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Modelempdept.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelempdeptStoreContainer">
+    <EntitySet Name="Empdacs" EntityType="Modelempdept.Store.Empdacs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Deptdacs" EntityType="Modelempdept.Store.Deptdacs" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="DeptdacEmpdac" Association="Modelempdept.Store.DeptdacEmpdac">
+      <End Role="Deptdac" EntitySet="Deptdacs" />
+      <End Role="Empdac" EntitySet="Empdacs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Empdacs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salary" Type="real" Nullable="false" />
+    <Property Name="DeptdacId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Deptdacs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="DeptdacEmpdac">
+    <End Role="Deptdac" Type="Modelempdept.Store.Deptdacs" Multiplicity="1" />
+    <End Role="Empdac" Type="Modelempdept.Store.Empdacs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Deptdac">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empdac">
+        <PropertyRef Name="DeptdacId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Modelempdept" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelempdeptContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Empdacs" EntityType="Modelempdept.Empdac" />
+          <EntitySet Name="Deptdacs" EntityType="Modelempdept.Deptdac" />
+          <AssociationSet Name="DeptdacEmpdac" Association="Modelempdept.DeptdacEmpdac">
+            <End Role="Deptdac" EntitySet="Deptdacs" />
+            <End Role="Empdac" EntitySet="Empdacs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Empdac">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Single" Name="Salary" Nullable="false" />
+          <NavigationProperty Name="Deptdac" Relationship="Modelempdept.DeptdacEmpdac" FromRole="Empdac" ToRole="Deptdac" />
+          <Property Type="Int32" Name="DeptdacId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deptdac">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Empdacs" Relationship="Modelempdept.DeptdacEmpdac" FromRole="Deptdac" ToRole="Empdac" />
+        </EntityType>
+        <Association Name="DeptdacEmpdac">
+          <End Type="Modelempdept.Deptdac" Role="Deptdac" Multiplicity="1" />
+          <End Type="Modelempdept.Empdac" Role="Empdac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deptdac">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empdac">
+              <PropertyRef Name="DeptdacId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelempdeptStoreContainer" CdmEntityContainer="ModelempdeptContainer">
+    <EntitySetMapping Name="Empdacs">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelempdept.Empdac)">
+        <MappingFragment StoreEntitySet="Empdacs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="DeptdacId" ColumnName="DeptdacId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deptdacs">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelempdept.Deptdac)">
+        <MappingFragment StoreEntitySet="Deptdacs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

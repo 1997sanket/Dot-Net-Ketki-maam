@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+
+   
+
+
+    public class Program
+    {
+
+
+
+        static void Main(string[] args)
+        {
+            int[] arr = new int[5];
+
+            Console.WriteLine("Enter elements");
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+
+
+            HashSet<int> hs = new HashSet<int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                try
+                {
+                    hs.Add(arr[i]);
+                }
+
+                catch (Exception e)
+                {
+                    Console.WriteLine("Could not add duplicate");
+                }
+            }
+
+
+            Console.WriteLine("Elements in HashSet");
+            foreach (var x in hs)
+            {
+                Console.WriteLine(x);
+            }
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

@@ -1,0 +1,22 @@
+c:\users\administrator\documents\visual studio 2012\Projects\ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\ConsoleApplicationEntity.exe.config
+c:\users\administrator\documents\visual studio 2012\Projects\ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\ConsoleApplicationEntity.exe
+c:\users\administrator\documents\visual studio 2012\Projects\ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\ConsoleApplicationEntity.pdb
+c:\users\administrator\documents\visual studio 2012\Projects\ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\EntityFramework.dll
+c:\users\administrator\documents\visual studio 2012\Projects\ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\EntityFramework.xml
+c:\users\administrator\documents\visual studio 2012\Projects\ConsoleApplicationEntity\ConsoleApplicationEntity\obj\Debug\ConsoleApplicationEntity.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2012\Projects\ConsoleApplicationEntity\ConsoleApplicationEntity\obj\Debug\ConsoleApplicationEntity.exe
+c:\users\administrator\documents\visual studio 2012\Projects\ConsoleApplicationEntity\ConsoleApplicationEntity\obj\Debug\ConsoleApplicationEntity.pdb
+D:\dot_net\Day_wise\day14entity\entity\ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\ConsoleApplicationEntity.exe.config
+D:\dot_net\Day_wise\day14entity\entity\ConsoleApplicationEntity\ConsoleApplicationEntity\obj\Debug\ConsoleApplicationEntity.exe
+D:\dot_net\Day_wise\day14entity\entity\ConsoleApplicationEntity\ConsoleApplicationEntity\obj\Debug\ConsoleApplicationEntity.pdb
+D:\dot_net\Day_wise\day14entity\entity\ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\ConsoleApplicationEntity.exe
+D:\dot_net\Day_wise\day14entity\entity\ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\ConsoleApplicationEntity.pdb
+D:\dot_net\Day_wise\day14entity\entity\ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\EntityFramework.dll
+D:\dot_net\Day_wise\day14entity\entity\ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\EntityFramework.xml
+D:\dot_net\Day_wise\A google classroom\Entity_demo\00ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\ConsoleApplicationEntity.exe.config
+D:\dot_net\Day_wise\A google classroom\Entity_demo\00ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\ConsoleApplicationEntity.exe
+D:\dot_net\Day_wise\A google classroom\Entity_demo\00ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\ConsoleApplicationEntity.pdb
+D:\dot_net\Day_wise\A google classroom\Entity_demo\00ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\EntityFramework.dll
+D:\dot_net\Day_wise\A google classroom\Entity_demo\00ConsoleApplicationEntity\ConsoleApplicationEntity\bin\Debug\EntityFramework.xml
+D:\dot_net\Day_wise\A google classroom\Entity_demo\00ConsoleApplicationEntity\ConsoleApplicationEntity\obj\Debug\ConsoleApplicationEntity.exe
+D:\dot_net\Day_wise\A google classroom\Entity_demo\00ConsoleApplicationEntity\ConsoleApplicationEntity\obj\Debug\ConsoleApplicationEntity.pdb

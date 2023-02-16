@@ -1,0 +1,14 @@
+1. static member	-	Same as in Java. Eg: Counting how many objects created, Rate of interest of 
+				bank.
+
+2. static Class		-	Utility class, by default sealed(final), has only static members. 
+				Eg : Console, Convert classes are static
+
+3. const		-	Needs to be declared and initialized together, resolves at compile time,
+				by default static. Can be used for local variable. Eg : primitive datatypes
+				Min and Max values, No of seats in DAC course.
+
+4. readonly		-	Same as final instance member of Java. Dont have to initialize, we can
+				initialize in constructor, not static by default. Cannot be used for local
+				variable. Eg : Rate of Interest we take from RBI bank and thus once 
+				initialized cannot be modified.

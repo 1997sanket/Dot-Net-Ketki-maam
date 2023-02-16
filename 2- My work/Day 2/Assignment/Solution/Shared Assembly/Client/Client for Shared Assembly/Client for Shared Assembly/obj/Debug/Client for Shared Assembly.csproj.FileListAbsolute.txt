@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\DLL\Client\Client for Shared Assembly\Client for Shared Assembly\bin\Debug\Client for Shared Assembly.exe.config
+C:\Users\User\Desktop\DLL\Client\Client for Shared Assembly\Client for Shared Assembly\bin\Debug\Client for Shared Assembly.exe
+C:\Users\User\Desktop\DLL\Client\Client for Shared Assembly\Client for Shared Assembly\bin\Debug\Client for Shared Assembly.pdb
+C:\Users\User\Desktop\DLL\Client\Client for Shared Assembly\Client for Shared Assembly\obj\Debug\Client for Shared Assembly.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\DLL\Client\Client for Shared Assembly\Client for Shared Assembly\obj\Debug\Client for Shared Assembly.exe
+C:\Users\User\Desktop\DLL\Client\Client for Shared Assembly\Client for Shared Assembly\obj\Debug\Client for Shared Assembly.pdb

@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+    //Item class
+    class Item
+    {
+        public String Name { get; set; }
+        public int ItemNumber { get; set; }
+
+        public Item(String name, int iNum)
+        {
+            Name = name;
+            ItemNumber = iNum;
+        }
+    }
+
+
+    //Whether item is present in stock or not
+    class InStockStatus
+    {
+        public int ItemNumber { get; set; }
+        public bool InStock { get; set; }
+
+        public InStockStatus(int iNum, bool b)
+        {
+            ItemNumber = iNum;
+            InStock = b;
+        }
+    } // A class that encapsulates a name with its status. 
+
+
+
+    //Temporary object to store join result
+    class Temp
+    {
+        public String Name { get; set; }
+        public bool InStock { get; set; }
+
+        public Temp(String name, Boolean inStock)
+        {
+            Name = name;
+            InStock = inStock;
+        }
+
+
+        public override string ToString()
+        {
+            return Name + " " + InStock;
+        }
+    }
+
+
+
+   //Thread class param constructor which will return some value
+    public class Program
+    {
+
+        static void Main(string[] args)
+        {
+            Item[] items = { 
+                new Item("Pliers", 1), 
+                new Item("Hammer", 2), 
+                new Item("Wrench", 3), 
+                new Item("Saw", 4) 
+            };
+
+
+            InStockStatus[] statusList = { 
+                new InStockStatus(1, true), 
+                new InStockStatus(2, false), 
+                new InStockStatus(3, true), 
+                new InStockStatus(4, true) 
+            };
+
+
+            //Joining name column/property from Item table/class to InStock column/property of InStockStatus table/class
+            var availableItems = from item in items
+                                 join
+                                     status in statusList
+                                         on item.ItemNumber equals status.ItemNumber
+                                 select new Temp(item.Name, status.InStock);
+
+
+
+            foreach (Temp t in availableItems)
+            {
+                Console.WriteLine(t.ToString());
+            }
+            
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

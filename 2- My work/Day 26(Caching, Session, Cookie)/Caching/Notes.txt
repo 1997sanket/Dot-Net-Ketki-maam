@@ -1,0 +1,19 @@
+1. Suppose we make a Website like Flipkart.
+
+2. We have various products here for sale. 
+
+3. Suppose user clicks button 1, he gets 10 items, then he clicks button 2,
+   he gets another 10 itmes. Now he again clicks 1, now again the server will 
+   hit the database and fetch the same 10 records.
+
+4. So, unnecessarily we are hitting the server again and again for the same 
+   records. 
+
+5. What if somehow, in the first fetch we could cache that fetch for atleast
+   some time, so that in that time, if the user requests again we dont have
+   to hit the database again and can just show him the cached records.
+
+6. Shopping site is a good example of using Caching.
+
+7. But sites like Stock markets, Cricket score, where data is constantly 
+   changing, we have to get the fresh record.

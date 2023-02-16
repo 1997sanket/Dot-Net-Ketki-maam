@@ -1,0 +1,11 @@
+1. Value type data like "int, long, etc" cannot be null.
+
+2. But we need that, because it may happen that we are extracting some Object from DB, and one of its 
+   properties is null, but since our primitive property of object cannot be null, it may give us error.
+
+3. In java this problem is easily solved by wrapper class, because they can point to null.
+
+4. But in C# wrapper classes are not there, so they have given us a way.
+  	
+	int ?a = 10; //Now this 'a' can be null as well.
+

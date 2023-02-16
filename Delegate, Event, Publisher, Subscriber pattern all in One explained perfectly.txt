@@ -1,0 +1,172 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+
+/*
+ *  Requirement :
+ *  
+ *      After video is encoded, Send a message on email.
+ *      
+ *  Procedure :
+ *      1- Declare a delegate (In this example we are using predefined delegate)
+ *      2- Declare an event
+ *      3- Subscribe to the event
+ *      4- Raise event
+ * 
+ * 
+ * 
+ *  Delegate 
+ *      It is like a contract between publisher and subscribers. The subscriber who is subscribed to the event has to follow the method 
+ *      signature (return type and parameter) used by the delegate. So that when an event is raised all the subscribed methods are called.
+ *      
+ *      Here hidden delegate is 'public delegate void EventHandler(Object o, EventArgs args)'
+ *      
+ * 
+ * 
+ * 
+ *  Event 
+ *      Raising an event is doing something when something happens. Here we are sending mail and sms when video is encoded.
+ *      Event is created on the basis of delegate. 
+ *      
+ *      Raising event is just invoking the event reference.
+ *      
+ *      Here the event is 'public event EventHandler VideoEncoded'
+ *      
+ *      We raise the event by  'VideoEncoded(this, EventArgs.Empty)'
+ *      
+ * 
+ *  
+ * 
+ *  
+ * Subscriber 
+ *      They are methods which follow the same signature as the delegate. And are subscribed to the event.
+ *      So when the event is raised we call these methods.
+ *      
+ * 
+ * 
+ * 
+ * Main advantage of this approach is Loose coupling.
+ * 
+ * Publisher, Subscriber don't know about each other. We can add or remove any subscriber we want and pubslisher code wont be affected.
+ * 
+ */
+
+
+namespace Practice_VS_2012
+{
+
+
+
+    class Video
+    {
+        private String name;
+
+        public Video(String name)
+        {
+            this.name = name;
+        }
+    }
+
+
+
+    class VideoEncoder
+    {
+        //public delegate void EventHandler(Object o, EventArgs args);  This delegate is internally used here
+
+        private Video v;
+        public event EventHandler VideoEncoded; //Creating an event based on predefined delegate
+
+        public VideoEncoder(Video v)
+        {
+            this.v = v;
+        }
+
+
+        public void OnVideoEncoded()
+        {
+            //If there is atleast 1 subscriber
+            if (VideoEncoded != null)
+            {
+                //raise the event
+                VideoEncoded(this, EventArgs.Empty);    //This will call the methods which have subscribed to this event
+            }
+        }
+
+
+        public void encodeVideo()
+        {
+            Console.WriteLine("Encoding video...");
+
+            Thread.Sleep(2000);
+
+            /*
+             * Here I could have directly called the Mail service method. But then this publisher would have been tightly coupled with
+             * Mail service. 
+             * 
+             * What if tomorrow I want to remove Mail service ?? Maybe I want to add some other type of messaging ?? T
+             * 
+             * That's why it is better that our publisher is loosely coupled with our subscribers. 
+             * 
+             * So tomorrow if some other service comes along, it has to only subscribe to our event. We dont have to touch our publisher code.
+             */
+
+            OnVideoEncoded();   
+        }
+    }
+
+
+
+
+    class MailService
+    {
+        public void sendMail(Object o, EventArgs args) 
+        {
+            Console.WriteLine("MailService :  Email sent");
+        }
+    }
+
+
+    class SMSService
+    {
+        public void sendSms(Object o, EventArgs args)
+        {
+            Console.WriteLine("SMSService :  SMS sent");
+        }
+    }
+
+    //Class where subscribing will happen
+    public class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+
+            Video v = new Video(".Net tutorial");
+
+            //Publisher
+            VideoEncoder ve = new VideoEncoder(v);  
+
+            //Subscriber
+            MailService ms = new MailService();
+
+            //Subscriber
+            SMSService ss = new SMSService();
+
+            //Subscribing
+            ve.VideoEncoded += ms.sendMail;
+            ve.VideoEncoded += ss.sendSms;
+
+            //Start video ENcoding
+            ve.encodeVideo();
+
+
+            Console.ReadLine();
+
+        }
+
+
+    }
+}

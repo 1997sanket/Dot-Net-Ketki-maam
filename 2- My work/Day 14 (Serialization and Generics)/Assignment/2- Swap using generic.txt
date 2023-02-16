@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Banking;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Soap;
+
+namespace Practice_VS_2012
+{
+    public static class Swap
+    {
+        public static void SwapValue<T>(ref T ob1, ref T ob2)
+        {
+            T temp = ob1;
+
+            ob1 = ob2;
+            ob2 = temp;
+
+           // Console.WriteLine(typeof(T));     System.Int32
+        }
+    }
+
+
+    public class Program
+    {
+
+
+
+        static void Main(string[] args)
+        {
+            int a = 10;
+            int b = 20;
+
+
+
+            //Call by reference
+            Swap.SwapValue<int>(ref a, ref b);
+
+
+            Console.WriteLine(a + " " + b);
+
+
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

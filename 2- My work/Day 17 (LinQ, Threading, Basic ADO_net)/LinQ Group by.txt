@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+
+    enum Department
+    {
+        MANAGER = 1, SENIOR_DEVELOPER = 2, JUNIOR_DEVELOPER =3, CLERK = 4
+    }
+
+    class Employee
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public Department Dept { get; set; }
+
+        public Employee(int id, String name, Department dept)
+        {
+            ID = id;
+            Name = name;
+            Dept = dept;
+        }
+
+        public override string ToString()
+        {
+            return ID + " " + Name + " " + Dept;
+        }
+    }
+
+   //Thread class param constructor which will return some value
+    public class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            Employee[] employees = 
+            { 
+                new Employee(1, "first", Department.MANAGER), 
+                new Employee(2, "two", Department.SENIOR_DEVELOPER), 
+                new Employee(3, "three", Department.JUNIOR_DEVELOPER), 
+                new Employee(4, "four", Department.JUNIOR_DEVELOPER), 
+                new Employee(5, "five", Department.CLERK) 
+            };
+
+
+            /*
+             *  Imagine this in SQL context like
+             *  
+             *  select * from employees group by Dept;
+             */
+            var groups = from employee in employees group employee by employee.Dept into x select x;    //Group by Departments (returns groups)
+
+            
+            foreach (var record in groups)  //Each record contains Key(Department) and Values(Employees in that department)
+            {
+                Console.WriteLine("Key = " + record.Key);   //MANAGER
+
+                Console.WriteLine("Values");
+                foreach (var value in record)  
+                {
+                    Console.WriteLine("{0}  {1}    {2}", value.ID, value.Name, value.Dept); //Loop through all the employees who are managers
+                }
+
+                Console.WriteLine();
+            }
+            
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

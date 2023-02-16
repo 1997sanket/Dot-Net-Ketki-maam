@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Practice_VS_2012
+{
+
+
+    //Main class
+    public class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+
+            int data = 0;
+            int i, j;
+
+            int[][] arr = new int[3][];     //3x3 matrix on heap
+            arr[0] = new int[3];
+            arr[1] = new int[3];
+            arr[2] = new int[3];
+
+            //Input
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 3; j++)
+                {
+
+                    Boolean b = int.TryParse(Console.ReadLine(), out data);
+
+                    //Console.WriteLine(b);
+
+                    arr[i][j] = data;
+
+
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+
+
+
+            for (i = 0; i < 3; i++)
+            {
+                for (j = 0; j < 3; j++)
+                {
+
+                    Console.Write(arr[i][j] + " ");
+                }
+
+                Console.WriteLine();
+            }
+
+
+
+            Console.ReadLine();
+
+        }
+    }
+}

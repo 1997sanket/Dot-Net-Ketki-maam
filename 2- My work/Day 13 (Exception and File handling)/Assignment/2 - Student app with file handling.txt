@@ -1,0 +1,86 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Banking;
+using System.IO;
+
+namespace Practice_VS_2012
+{
+
+    class InvalidMarksException : System.ApplicationException
+    {
+        public InvalidMarksException(String msg) : base(msg) 
+        {
+
+        }
+    }
+
+
+    class Student
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public double Marks { get; set; }
+
+
+        public void giveGraceMarks(double marks)
+        {
+            if (marks > 5) throw new InvalidMarksException("Grace marks should be less than or equal to 5");
+
+            else Marks += marks;
+        }
+
+
+        public override string ToString()
+        {
+            return ID + " " + Name + " " + Marks;
+        }
+    }
+
+    
+    public class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+
+            Student s = new Student() { ID = 1, Name = "Sanket", Marks = 34 };
+
+             
+
+            
+                s.giveGraceMarks(3);
+
+                //Create a file in write mode
+                using (StreamWriter sw = new StreamWriter(new FileStream("abc.txt", FileMode.Create, FileAccess.Write)))    //this is like ARM of Java, releases resources automatically
+                {
+
+
+                    String str = s.ToString();
+
+                    Console.WriteLine(str);
+
+
+                    //Writing to file
+                    sw.Write(str);
+
+                    Console.WriteLine("Successfully written");
+
+                }
+
+
+
+           
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

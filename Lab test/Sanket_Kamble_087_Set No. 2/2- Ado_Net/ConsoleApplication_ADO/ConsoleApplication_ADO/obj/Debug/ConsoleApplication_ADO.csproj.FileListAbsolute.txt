@@ -1,0 +1,9 @@
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087\2- Ado_Net\ConsoleApplication_ADO\ConsoleApplication_ADO\bin\Debug\ConsoleApplication_ADO.exe.config
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087\2- Ado_Net\ConsoleApplication_ADO\ConsoleApplication_ADO\obj\Debug\ConsoleApplication_ADO.csprojResolveAssemblyReference.cache
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087\2- Ado_Net\ConsoleApplication_ADO\ConsoleApplication_ADO\bin\Debug\ConsoleApplication_ADO.exe
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087\2- Ado_Net\ConsoleApplication_ADO\ConsoleApplication_ADO\bin\Debug\ConsoleApplication_ADO.pdb
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087\2- Ado_Net\ConsoleApplication_ADO\ConsoleApplication_ADO\obj\Debug\ConsoleApplication_ADO.exe
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087\2- Ado_Net\ConsoleApplication_ADO\ConsoleApplication_ADO\obj\Debug\ConsoleApplication_ADO.pdb
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087_Set No. 2\2- Ado_Net\ConsoleApplication_ADO\ConsoleApplication_ADO\bin\Debug\ConsoleApplication_ADO.exe.config
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087_Set No. 2\2- Ado_Net\ConsoleApplication_ADO\ConsoleApplication_ADO\obj\Debug\ConsoleApplication_ADO.exe
+C:\Sanket CDAC\.Net\Lab test\Sanket_Kamble_087_Set No. 2\2- Ado_Net\ConsoleApplication_ADO\ConsoleApplication_ADO\obj\Debug\ConsoleApplication_ADO.pdb

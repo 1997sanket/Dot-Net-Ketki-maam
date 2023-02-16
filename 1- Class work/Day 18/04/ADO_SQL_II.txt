@@ -1,0 +1,7 @@
+ExecuteNonQuery() — Executes the command but does not return any output returns the number of rows affected by the command as an int eg:insert,update,delete
+
+ExecuteReader() — Executes the command and returns a typed IDataReader This method executes the command and returns a typed data reader object, depending on the providerin use
+	 eg:select
+
+ExecuteScalar() — Executes the command and returns a single value. return a single result from a SQL statement, such as the count of records in a given table, or the current date/time on the server 
+	eg:count of empoyee id,sum,etc

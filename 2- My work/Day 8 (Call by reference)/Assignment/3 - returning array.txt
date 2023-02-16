@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Practice_VS_2012
+{
+    
+
+
+    //Main class
+    public class Program
+    {
+        class MyClass
+        {
+            public static int[] sqrArray(int[] arr, out int sum)
+            {
+                sum = 0;
+                int[] brr = new int[3];
+
+                for(int i=0; i<arr.Length; i++)
+                {
+                    sum = sum + arr[i];
+
+                    brr[i] = arr[i] * arr[i];
+                }
+
+
+                return brr;
+            }
+        }
+
+
+        static void Main(string[] args)
+        {
+            int sum;
+
+            int[] arr = { 1, 2, 3 };
+
+            int [] brr = MyClass.sqrArray(arr, out sum);
+
+            Console.WriteLine(sum);
+
+            for(int i=0; i<brr.Length; i++)
+            {
+                Console.Write(brr[i] + " ");
+            }
+
+            Console.ReadLine();
+
+        }
+    }
+}

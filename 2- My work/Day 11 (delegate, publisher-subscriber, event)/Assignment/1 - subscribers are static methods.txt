@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+/*
+    Main idea of this example is Decoupling.
+ * 
+ * HEre publisher is separate. 
+ * 
+ * Subscriber is separate
+ * 
+ * Class where subscribing happens is separate.
+*/
+
+
+namespace Practice_VS_2012
+{
+
+    delegate void myDelegate(int x);
+
+    class Publisher
+    {
+        public event myDelegate myEvent;
+
+        public void raiseEvent(int x)
+        {
+            if (myEvent != null) myEvent(x);
+        }
+
+    }
+
+    static class Subscriber_Calculator
+    {
+        public static void sqr(int x)
+        {
+            Console.WriteLine(x*x);
+        }
+
+        public static void cube(int x)
+        {
+            Console.WriteLine(x*x*x);
+        }
+    }
+    
+
+    //Class where subscribing will happen
+    public class Program
+    {
+
+       
+        static void Main(string[] args)
+        {
+            Publisher publisher = new Publisher();
+
+            //Subscribing
+            publisher.myEvent += Subscriber_Calculator.sqr;
+            publisher.myEvent += Subscriber_Calculator.cube;
+
+
+            //Raise event(find sqr and cube)
+            publisher.raiseEvent(2);
+            
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Practice_VS_2012
+{
+    
+
+
+    //Main class
+    public class Program
+    {
+        class VarArgs
+        {
+            public static void sum(params int[] arr)
+            {
+                int sum = 0;
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    sum = sum + arr[i];
+                }
+
+                Console.WriteLine("Sum = " + sum);
+            }
+        }
+
+
+        static void Main(string[] args)
+        {
+
+            VarArgs.sum(1, 2);
+
+            VarArgs.sum(1, 2, 3);
+
+            Console.ReadLine();
+
+        }
+    }
+}

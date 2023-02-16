@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\SchemaFirst\SchemaFirst\bin\Debug\SchemaFirst.exe.config
+C:\Users\User\Desktop\SchemaFirst\SchemaFirst\bin\Debug\SchemaFirst.exe
+C:\Users\User\Desktop\SchemaFirst\SchemaFirst\bin\Debug\SchemaFirst.pdb
+C:\Users\User\Desktop\SchemaFirst\SchemaFirst\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\SchemaFirst\SchemaFirst\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\SchemaFirst\SchemaFirst\obj\Debug\SchemaFirst.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\SchemaFirst\SchemaFirst\obj\Debug\SchemaFirst.exe
+C:\Users\User\Desktop\SchemaFirst\SchemaFirst\obj\Debug\SchemaFirst.pdb
+C:\Sanket CDAC\.Net (Ketki Maam)\2- My work\Day 24(MVC with Entity framework)\SchemaFirst\SchemaFirst\bin\Debug\SchemaFirst.exe.config
+C:\Sanket CDAC\.Net (Ketki Maam)\2- My work\Day 24(MVC with Entity framework)\SchemaFirst\SchemaFirst\obj\Debug\SchemaFirst.exe
+C:\Sanket CDAC\.Net (Ketki Maam)\2- My work\Day 24(MVC with Entity framework)\SchemaFirst\SchemaFirst\obj\Debug\SchemaFirst.pdb

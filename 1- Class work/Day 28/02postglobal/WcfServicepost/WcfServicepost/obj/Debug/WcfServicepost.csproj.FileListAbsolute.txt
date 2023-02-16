@@ -1,0 +1,4 @@
+D:\dot_net\Day_wise\Day17WCF_restAPI\02postglobal\WcfServicepost\WcfServicepost\bin\WcfServicepost.dll
+D:\dot_net\Day_wise\Day17WCF_restAPI\02postglobal\WcfServicepost\WcfServicepost\bin\WcfServicepost.pdb
+D:\dot_net\Day_wise\Day17WCF_restAPI\02postglobal\WcfServicepost\WcfServicepost\obj\Debug\WcfServicepost.dll
+D:\dot_net\Day_wise\Day17WCF_restAPI\02postglobal\WcfServicepost\WcfServicepost\obj\Debug\WcfServicepost.pdb

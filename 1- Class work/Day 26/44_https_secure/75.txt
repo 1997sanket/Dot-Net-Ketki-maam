@@ -1,0 +1,27 @@
+we will discuss RequireHttps attribute. 
+
+[RequireHttps] attribute forces an unsecured HTTP request to be re-sent over HTTPS. Let's understand [RequireHttps] attribute with an example. 
+
+
+  
+
+Step 1: Create an asp.net mvc4 application using "Empty" template
+
+Step 2: Add a HomeController. Copy and paste the Login() action method in the HomeController.
+[RequireHttps]
+public string Login()
+{
+    return "This method should be accessed only using HTTPS protocol";
+}
+
+
+  
+
+Step 3: Try to navigate to http://localhost/MVCDemo/Home/Login. Notice that you are automatically redirected to https://localhost/MVCDemo/Home/Login. So, [RequireHttps] attribute, forces an HTTP request to be re-sent over HTTPS.
+RequireHttps Attribute in mvc 
+
+RequireHttps attribute can be applied on a controller as well. In this case, it is applicable for all action methods with in that controller.
+
+Sensitive data such as login credentials, credit card information etc, must always be transmitted using HTTPS. Information transmitted over https is encrypted. 
+
+ 

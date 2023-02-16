@@ -1,0 +1,70 @@
+==================================================
+Location Property with OutputCache Attribute:
+==============================================
+The Location property of OutputCache Attribute is used to specify the location where the output is cached. The Location property takes the values from OutputCacheLocation enum. The definition of OutputCacheLocation enum is shown below.
+
+namespace System.Web.UI
+{
+    // Summary:
+    //     Specifies the valid values for controlling the location of the output-cached
+    //     HTTP response for a resource.
+    public enum OutputCacheLocation
+    {
+        // Summary:
+        //     The output cache can be located on the browser client (where the request
+        //     originated), on a proxy server (or any other server) participating in the
+        //     request, or on the server where the request was processed. This value corresponds
+        //     to the System.Web.HttpCacheability.Public enumeration value.
+        Any = 0,
+        //
+        // Summary:
+        //     The output cache is located on the browser client where the request originated.
+        //     This value corresponds to the System.Web.HttpCacheability.Private enumeration
+        //     value.
+        Client = 1,
+        //
+        // Summary:
+        //     The output cache can be stored in any HTTP 1.1 cache-capable devices other
+        //     than the origin server. This includes proxy servers and the client that made
+        //     the request.
+        Downstream = 2,
+        //
+        // Summary:
+        //     The output cache is located on the Web server where the request was processed.
+        //     This value corresponds to the System.Web.HttpCacheability.Server enumeration
+        //     value.
+        Server = 3,
+        //
+        // Summary:
+        //     The output cache is disabled for the requested page. This value corresponds
+        //     to the System.Web.HttpCacheability.NoCache enumeration value.
+        None = 4,
+        //
+        // Summary:
+        //     The output cache can be stored only at the origin server or at the requesting
+        //     client. Proxy servers are not allowed to cache the response. This value corresponds
+        //     to the combination of the System.Web.HttpCacheability.Private and System.Web.HttpCacheability.Server
+        //     enumeration values.
+        ServerAndClient = 5,
+    }
+}
+As per your business requirement and security, you can cache the data in the appropriate location.
+
+Any: This is the default value for Location Property. If we have not specified the Location Property in OutputCache Attribute then the value is going to be Any. In this case, the output cache can be located on the browser client (from where the request is originated) on a proxy server (or any other server) participating in the request, or on the server where the request was processed.
+
+Client: If you set the Location value to Client, then the output cache is going to be stored on the browser client from where the request is originated.
+
+Downstream: When you set the Location value to Downstream, then the output cache is going to be stored in any HTTP 1.1 cache-capable devices other than the origin server. This includes proxy servers and the client that made the request.
+
+Sever: When you set the Location value as Server, then the output cache is going to be stored on the Web server where the request was processed.
+
+
+ 
+None: When you set the Location value to None, then the output cache is disabled for the requested page.
+
+ServerAndClient: When you set the Location value as ServerAndClient, then the output cache can be stored only at the origin server or at the requesting client. Proxy servers are not allowed to cache the response. This value corresponds to the combination of the System.Web.HttpCacheability.Private and System.Web.HttpCacheability.Server enumeration values.
+[OutputCache(Duration = 10, Location = System.Web.UI.OutputCacheLocation.Client)]
+public ActionResult Index()
+{
+    return View(db.Employees.ToList());
+}

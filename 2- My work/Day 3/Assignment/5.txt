@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice_VS_2012
+{
+
+    class Program
+    {
+        static void Main(string[] args) 
+        {
+            Console.WriteLine("Enter no ");
+            var x = Console.ReadLine();
+
+            Console.WriteLine("Data type = {0}  ParenType = {1} ", x.GetType(), x.GetType().BaseType);
+
+            Console.ReadLine();
+
+        }
+    }
+}

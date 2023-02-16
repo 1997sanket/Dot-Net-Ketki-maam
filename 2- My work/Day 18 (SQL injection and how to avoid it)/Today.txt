@@ -1,0 +1,5 @@
+1. Configuration file
+
+2. Class and Table mapping
+
+3. SQL injection and how to avoid it

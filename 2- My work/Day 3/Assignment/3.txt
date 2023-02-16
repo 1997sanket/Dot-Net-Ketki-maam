@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice_VS_2012
+{
+
+    struct Employee
+    {
+        String name;
+        double salary;
+
+        public Employee(String name, double salary)
+        {
+            this.name = name;
+            this.salary = salary;
+        }
+
+        public void display()
+        {
+            Console.WriteLine("Name = {0}   Salary = {1}", name, salary);
+        }
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args) 
+        {
+            Employee e1 = new Employee("Sanket", 23);
+
+            e1.display();
+           
+            Console.ReadLine();
+
+        }
+    }
+}

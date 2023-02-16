@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Practice_VS_2012
+{
+
+
+    //Main class
+    public class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter string ");
+
+            String str1 = Console.ReadLine();   //On heap
+
+            String str2 = str1.ToLower();   //On heap
+
+            Console.WriteLine(str1 == str2);    //Checks content
+
+            Console.WriteLine(Object.ReferenceEquals(str1, str2));  //Proves that they are different memory blocks(on heap)
+           
+            Console.ReadLine();
+
+        }
+    }
+}

@@ -1,0 +1,10 @@
+1. Source code is compiled to MSIL by C sharp compiler and MSIL file is compiled to native code by 
+   JIT compiler.
+
+2. When we run our application, a dll file called 'msscoree.dll' also get embedded in our Assembly(project)
+   and its '_CoreExeMain()' function is added in our project.
+
+3. OS cannot directly communicate with CLR, so it calls '_CoreExeMain()' function, which in turns wakes up 
+   CLR, and then CLR loads classes on demand basis and are compiled by JIT compiler.
+
+4. CLR only deals with Managed code and not Unmanaged code(where pointers are used).

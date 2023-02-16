@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+
+namespace Practice_VS_2012
+{
+
+   
+
+
+    public class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            //Creating Thread by passing a lambda to the delegate, Start() will invoke this implementation method
+            new Thread(() => {
+
+                for (int i = 1; i <= 5; i++)
+                {
+                    Console.WriteLine(i);
+                    Thread.Sleep(1000);
+                }
+
+            }).Start();
+
+
+            //Main thread runs this
+            for (int i = 6; i <= 10; i++)
+            {
+                Console.WriteLine(i);
+
+                Thread.Sleep(1000);
+            } 
+
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

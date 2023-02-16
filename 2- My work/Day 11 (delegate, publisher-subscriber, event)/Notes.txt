@@ -1,0 +1,3 @@
+1. event keyword is used so that method is not called outside of class
+
+2. event keyword only support multicast delegate thats why '+='

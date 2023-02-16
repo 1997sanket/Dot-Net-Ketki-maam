@@ -1,0 +1,38 @@
+
+Using Object class for generic(generalization)
+
+class MyNum {
+	
+	Object obj;
+
+	MyNum(Object obj)
+	{
+
+		this.obj = obj;
+	}
+
+	public Object getObj()
+	{
+		return obj;
+	}
+
+}
+
+
+Main {
+
+	int a = (int) new MyNum(10).getObj(); //Boxing happens, Also we are type casting
+
+
+}
+
+
+
+1. If we use Object class for generics, we get into lot of problem like 
+
+	a) We need to explictly type cast when retrieving data
+	b) If we pass Value type as data, Boxing will occur and when we get value and typecast Unboxing occurs which is a heavy process.
+	c) Suppose we had an Array of MyNum class, this array can hold any type of data, which is not very practical. What if I created an 
+	   array of Animals and then I can accidently also add a Human object inside that array.
+	d) Suppose I create 2 objects of MyNum, passing int and string. Then I can also write (int a = String str) And it wont give compilation
+   	   error, but we will get problem at runtime.

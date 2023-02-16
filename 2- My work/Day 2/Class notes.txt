@@ -1,0 +1,25 @@
+1. byte + byte results in int. So either do type casting or left side should be int.
+
+2. Assembly can be '.exe' file (if it has Main method) or '.dll' file if its just a library that we want to
+   use in some applicatio.
+
+3. Assembly is of 3 types 
+	a) Local	b) Shared	c)Satellite
+
+a)Local : When we add a '.dll' file in our project. Our project gets copy of that '.dll' file also.
+
+
+b)Shared : Supppose we have 10k applications and all want to use the same library file, then all will have 
+           same copy of the dll file, which is not optimal, so we need to add the library file in something
+	   something called as GAC (global assembly cache). So that each project doesnt have the same copy.
+
+c)Satellite : More on this later.
+
+
+4. checked keyword : Suppose in case we are using byte data type and we think result may overflow(get bigger
+                     than 255) then we can either collect the result in int or if we still want to use byte
+		     we can use it, but due to overflow our result will go around and become something like
+		     0,1,2.... If we want to avoid this than we need to use 'checked' block. Now incase 
+		     our range overflows it will give us Runtime exception.
+
+5. Difference between 'int.parse', 'Convert.toInt32()' and 'int.TryParse()'

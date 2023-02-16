@@ -1,0 +1,10 @@
+1. Open visual studio 2019 
+
+2. Create new project (ASP.Net Web application with .NET framework)
+
+3. Select Web API
+
+4. Add the Model from the database (Database can be created in "View" -> SQl
+					Server object explorer)
+
+5. Generate Controller based on that model.

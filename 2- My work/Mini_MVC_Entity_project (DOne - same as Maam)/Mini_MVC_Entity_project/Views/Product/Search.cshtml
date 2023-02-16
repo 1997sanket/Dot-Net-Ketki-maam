@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+
+@if (ViewBag.wrongLogin != null)
+{
+    <h2>No product of such name</h2>
+}
+
+@using(@Html.BeginForm())
+{
+
+<h2>Search by name</h2>
+@Html.TextBox("name");
+
+<input type="submit" />
+
+}

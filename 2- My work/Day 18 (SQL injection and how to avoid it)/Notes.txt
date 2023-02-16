@@ -1,0 +1,16 @@
+1. We use SqlCommand class to execute a query.
+
+2. If it is a select query we get results in 'SqlDataReader' and command we execute is 'ExecuteQuery()'
+
+3. If it is a insert, update, delete query we need to use command 'ExecuteNonQuery()'
+
+4. If our query is going to return result of some aggregate SQL function we use 'ExecuteScalar()'
+
+
+
+5. SQL injection is when we write data from user and add that data directly in our query. 
+	This is very bad, as user may enter a delete statement and all the records of our table will be deleted.
+
+6. Solution :
+	a) Paramterized query
+	b) Stored procedure.

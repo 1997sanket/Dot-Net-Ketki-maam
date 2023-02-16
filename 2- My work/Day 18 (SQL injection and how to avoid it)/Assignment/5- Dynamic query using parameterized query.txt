@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+using Banking;
+
+using System.Configuration;
+
+using System.Data.SqlClient;
+
+namespace Practice_VS_2012
+{
+
+    class Employee
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public float Salary { get; set; }
+
+        public override string ToString()
+        {
+            return ID + " " + Name + " " + Salary;
+        }
+    }
+
+
+
+    class EmployeeBusinessLayer
+    {
+
+        //Not recommended at all. User may enter delete command which will delete all our rows
+        public void getEmployeesByFirstLetter(String name)
+        {
+
+            //Not hardcoding database connection
+            String connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;  //@"Data Source=(localdb)\Projects;Initial Catalog=mydb;Integrated Security=True;";
+
+          
+
+            //Will automatically release this resource
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                String sql = "select * from employee where Name like @EmployeeName";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+
+                //Using parameterized query to avoid SQL injection hack
+                command.Parameters.AddWithValue("@EmployeeName", name + "%");
+
+                connection.Open();
+
+                SqlDataReader result =  command.ExecuteReader();
+
+                //if (result.HasRows) Console.WriteLine("Yes");
+
+                while (result.Read())
+                {
+                    Console.WriteLine(result["Id"] + " " + result["Name"] + " " + result["Salary"]);
+                }
+            }
+
+        }
+
+
+
+
+        
+    }
+
+    public class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            EmployeeBusinessLayer ebl = new EmployeeBusinessLayer();
+
+            ebl.getEmployeesByFirstLetter("A");
+
+
+            //SQL injection hack (using this user may delete our employee with ID = 6)
+            //ebl.getEmployeesByFirstLetter("A'; delete from employee where Id=6; select * from employee where Name like 'A");
+
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

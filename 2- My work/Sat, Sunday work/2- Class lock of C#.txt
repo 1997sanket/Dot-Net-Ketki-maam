@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+
+using System.Data.SqlClient;
+
+namespace Practice_VS_2012
+{
+    class Math 
+    {
+        public int getFactorial(int x)
+        {
+            Console.WriteLine("Thread " + Thread.CurrentThread.Name);
+
+            int fact = 1;
+
+            for (int i = 2; i <= x; i++)
+            {
+                fact *= i;
+            }
+
+            return fact;
+        }
+    }
+
+
+
+    class ThreadCreator
+    {
+        Thread t;
+        static Math m = new Math(); //This object is shared by all Thread classes, that's we need to apply lock
+
+
+        public ThreadCreator(String name, int num)
+        {
+            t = new Thread(this.mimicFactorial);
+            t.Start(num);
+            t.Name = name;
+        }
+
+        public void mimicFactorial(object num)
+        {
+            
+
+            int fact = 0;
+            int x = (int)num;
+
+            lock(m) fact = m.getFactorial(x);   //Calling factorial here, so that we can get the return value and locking so that 1 thread runs at a time
+
+            Console.WriteLine("Factorial = " + fact);
+        }
+    }
+   
+    public class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            new ThreadCreator("Thread 1", 3);
+
+            new ThreadCreator("Thread 2", 4);
+
+
+
+            
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

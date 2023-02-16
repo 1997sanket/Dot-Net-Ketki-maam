@@ -1,0 +1,52 @@
+using System;
+namespace ObjectOverrides
+{// Remember! Person extends Object.
+    class Person
+    {
+        string fnm, lnm;
+        int age;
+        public Person(string fName, string lName, int personAge)
+        {
+            fnm = fName;
+            lnm = lName;
+            age = personAge;
+        }
+        public int Age
+        {
+            get { return age; }
+            set { age = value; }
+
+        }
+        public override string ToString()
+        {
+            return string.Format("{0} {1} {2}]", fnm, lnm, age);
+        }
+        public override bool Equals(object obj)
+        {        
+                   
+
+            return obj.ToString() == this.ToString();
+        }
+        // Return a hash code based on the person's ToString() value.
+        public override int GetHashCode()
+        {
+            return this.ToString().GetHashCode();
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {    // NOTE:  We want these to be identical to test
+            // the Equals() and GetHashCode() methods.
+            Person p1 = new Person("Raj", "Mathur", 22);
+            Person p2 = new Person("Raj", "Mathur", 22); 
+               
+
+            // Test Overridden Equals()
+           Console.WriteLine("p1 = p2?: {0}", Object.Equals(p1,p2));
+          
+        
+        }
+    }
+}
+

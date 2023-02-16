@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Practice_VS_2012
+{
+
+
+    //Main class
+    public class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter name ");
+
+            String name = Console.ReadLine();
+
+            Console.WriteLine("Enter pass ");
+            String pass1 = Console.ReadLine();
+
+
+            Console.WriteLine("Confirm pass ");
+            String pass2 = Console.ReadLine();
+
+            if (pass1.Equals(pass2))
+            {
+
+                Console.WriteLine("Pass correct");
+            }
+            else
+            {
+                Console.WriteLine("Pass Incorrect");
+            }
+
+            
+           
+            Console.ReadLine();
+
+        }
+    }
+}

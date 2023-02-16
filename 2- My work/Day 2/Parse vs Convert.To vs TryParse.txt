@@ -1,0 +1,24 @@
+1.  int a = int.Parse(str) 
+
+	if str = "1"	->	a = 1
+	if str = "Hi"	->	System.FormatException
+	if str = null	->	ArgumentNull exception
+
+
+
+2. int a = Convert.toInt32(str)
+
+	if str = "1"	->	No problem
+	if str = "Hi"	->	System.FormatException
+	if str = null	->	0
+
+
+
+3. int a;
+		(safest, because no runtime exceptions)
+	Boolean b = int.TryParse(str, out a);
+
+	
+	if str = "1"	->	a = 1
+	if str = "Hi"	->	a = 0
+	if str = null	->	a = 0

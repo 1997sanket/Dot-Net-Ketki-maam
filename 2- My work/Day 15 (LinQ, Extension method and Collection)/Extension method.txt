@@ -1,0 +1,41 @@
+1. Suppose we developed a class Employee and many other classes and made our application. 
+
+2. Now we want to add some additional functionality in our Employee class.
+
+3. If we add in the existing employee class, it may break our application.
+
+4. One thing we can do is extend this class and then add our new functionality. But then we have to maintain
+   2 Employee classes now. But here is the catch, what if our Employee class needs to be final/sealed ? 
+
+5. So this is where extension method comes into picture.
+
+6. Now we have String class which is final. And for our application there is some functionality which 
+   we needs to apply on String references a lot. So we will make an extention method.
+
+7. Steps to make extension method
+
+	a) Create static class 
+	b) create static method
+	c) add "this" in parameter
+
+
+8. Eg:
+
+	public static class Employee_Extension {
+
+		public static String ChangeFirstLetterToUpper(this String str) {
+
+			//logic
+
+		}
+
+	}
+
+
+	Main() {
+
+		String str1 = "hello";
+
+		String str2 = str.ChangeFirstLetterToUpper();	//returns "Hello"
+
+	}

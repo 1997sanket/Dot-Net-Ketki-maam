@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+
+
+
+namespace Practice_VS_2012
+{
+
+    class Employee
+    {
+        public int ID { get; set; }
+        public String Name { get; set; }
+        public double Salary { get; set; }
+
+        public override String ToString()
+        {
+            return Name+ " " + Salary;
+        }
+    }
+    
+    public class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+
+            Employee[] arr = new Employee[100000];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine("Creating object " + (i+1));
+                arr[i] = new Employee();
+
+
+                if (i == 0) Console.WriteLine("0th index generation : " + GC.GetGeneration(arr[0])); 
+            }
+
+
+            Console.WriteLine("0th index generation : " + GC.GetGeneration(arr[0]));    //2
+
+
+            GC.Collect(0, GCCollectionMode.Forced);
+
+
+
+            Console.WriteLine("0th index generation : " + GC.GetGeneration(arr[0]));    //2
+
+
+
+            Console.WriteLine("Last index generation : " + GC.GetGeneration(arr[arr.Length-1]));        //1
+
+
+
+
+            Console.ReadLine();
+
+        }
+
+
+    }
+}

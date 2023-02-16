@@ -1,0 +1,12 @@
+1. The idea of Disconnected view is not to be constantly connected to the Database.
+
+2. Instead we will make a copy of our entire Database in our local memory. This gets copied into DataSet object.
+
+3. Now just like Database, Dataset object also has tables, rows and columns.
+
+4. Tables are stored in DataSet index wised. If there are 2 tables first will be stored in 0th index of Tables array and 2nd will be stored
+   in 1st index and so on.
+
+5. We can even give name to our Tables.
+
+6. We get our table from the DataSet and iterate over using by taking rows and columns and print our data

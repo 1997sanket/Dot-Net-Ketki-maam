@@ -1,0 +1,9 @@
+Global.asp
+	Route table
+		Controller 
+			View
+			  _ViewStart.cshtml
+				        _Layout.cshtml
+						@RenderBody() [Our page renders here(Just like in Angular)]
+ 
+	

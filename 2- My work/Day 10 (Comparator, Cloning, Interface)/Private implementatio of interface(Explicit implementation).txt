@@ -1,0 +1,47 @@
+1. It may happen that we implement 2 interface which have the same method signature
+
+2. So when we override and implement the method, we are implementing botht the methods.
+
+3. But surely we created different interface for diff purposes, so we need to figure out the way to give 2
+   separate implementations these 2 interfaces.
+
+4.Eg :
+	interface IA {
+
+		void disp();
+	}
+
+	interface IB {
+
+		void disp();
+
+	}
+
+
+	//Normal
+	class MyClass : IA, IB {
+
+		public void disp() {
+			
+		}
+
+	}
+
+
+
+	//Private implementation 
+	class MyClass : IA, IB {
+		
+		//private methods (So cannot access using Class reference)
+		void IA.disp() {
+
+		}
+
+		void IB.disp() {
+
+		}
+
+	}
+
+
+5. This implemented methods can only be accessed using Interface reference

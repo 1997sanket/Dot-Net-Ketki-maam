@@ -1,0 +1,13 @@
+The following says that the strong type used for the model 
+
+@model _05entity.Models.Employee
+
+
+
+This basically declares the 'variable' Model as that type. It's akin to doing the following:
+
+
+
+@Model.EmployeeId
+
+Model is a variable, @model is a keyword saying what type Model will be

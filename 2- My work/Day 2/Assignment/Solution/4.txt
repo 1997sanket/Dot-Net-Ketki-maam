@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice_VS_2012
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter firstName ");
+            String str1 = Console.ReadLine();
+
+            Console.WriteLine("Enter secondName ");
+            String str2 = Console.ReadLine();
+
+            Console.WriteLine(str1 + " " +  str2);
+
+            Console.ReadLine();
+
+        }
+    }
+}

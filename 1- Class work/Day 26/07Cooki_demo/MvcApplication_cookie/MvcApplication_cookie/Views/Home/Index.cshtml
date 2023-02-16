@@ -1,0 +1,38 @@
+﻿@model MvcApplication_cookie.Models.User_Login
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))  
+{  
+<fieldset>  
+<legend>Mvc Simple Login Application Demo</legend>  
+
+<table>  
+<tr>  
+<td>@Html.LabelFor(a => a.Name)</td>  
+
+
+   
+<td>@Html.TextBoxFor(a => a.Name)</td>  
+<td>@Html.ValidationMessageFor(a => a.Name)</td>  
+</tr>  
+<tr>  
+<td>  @Html.LabelFor(a => a.Password)  </td>  
+<td>  @Html.PasswordFor(a => a.Password)  </td>  
+<td>  @Html.ValidationMessageFor(a => a.Password)  </td>  
+</tr>  
+<tr>  
+<td><input type="checkbox" name="chk"  value="check" /> </td>  
+<td>  
+<input type="submit" value="Login" />  
+</td>  
+<td></td>  
+</tr>  
+</table>  
+</fieldset>  
+}  

@@ -1,0 +1,8 @@
+C:\Users\User\Desktop\DLL\SharedLibrary\SharedLibrary\bin\Debug\SharedLibrary.dll
+C:\Users\User\Desktop\DLL\SharedLibrary\SharedLibrary\bin\Debug\SharedLibrary.pdb
+C:\Users\User\Desktop\DLL\SharedLibrary\SharedLibrary\obj\Debug\SharedLibrary.dll
+C:\Users\User\Desktop\DLL\SharedLibrary\SharedLibrary\obj\Debug\SharedLibrary.pdb
+C:\Sanket CDAC\.Net\My work\Day 2\Assignment\Solution\Shared Assembly\SharedLibrary\SharedLibrary\obj\Debug\SharedLibrary.dll
+C:\Sanket CDAC\.Net\My work\Day 2\Assignment\Solution\Shared Assembly\SharedLibrary\SharedLibrary\bin\Debug\SharedLibrary.dll
+C:\Sanket CDAC\.Net\My work\Day 2\Assignment\Solution\Shared Assembly\SharedLibrary\SharedLibrary\bin\Debug\SharedLibrary.pdb
+C:\Sanket CDAC\.Net\My work\Day 2\Assignment\Solution\Shared Assembly\SharedLibrary\SharedLibrary\obj\Debug\SharedLibrary.pdb

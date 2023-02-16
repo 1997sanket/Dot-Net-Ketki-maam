@@ -1,0 +1,123 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+using Banking;
+
+using System.Data.SqlClient;
+
+namespace Practice_VS_2012
+{
+   
+    public class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            List<Account> accounts = new List<Account>();
+
+            accounts.Add(new SavingAccount("Sanket Kamble", 45000));
+            accounts.Add(new CurrentAccount("Martin Nadar", 55000));
+            accounts.Add(new SavingAccount("Ashok Solanki", 2000));
+            accounts.Add(new CurrentAccount("Atif Haldar", 6000));
+
+            //Subscribing
+            accounts[0].myEvent += (name, amount) => Console.WriteLine(name + " withdrew " + amount + " amount");
+
+            accounts[0].withdraw(200);
+
+
+
+           // accounts[0].withdraw(1000000);    this will give EXception and add a file with the userName in the current folder with details of the account holder" 
+
+
+
+            //select name from accounts where balance == (select MAX(balance) from accounts);
+            var userWithHighestBalance = from userName in accounts where userName.getBalance().Equals((from balance in accounts select balance.getBalance()).Max()) select userName.Name;
+
+            Console.WriteLine("User with Highest Balance ");
+            foreach (var x in userWithHighestBalance)
+            {
+                Console.WriteLine(x);   // Sanket Kamble
+            }
+
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            Console.WriteLine("User whose name starts with 's' ");
+            //ALL user whose name is starting from s
+           (from user in accounts where user.Name.ToLower().StartsWith("s") select user).ToList().ForEach(user=>Console.WriteLine(user));
+
+
+
+           Console.WriteLine();
+           Console.WriteLine();
+           Console.WriteLine();
+
+
+            //User with salary > than 40k
+           Console.WriteLine("User with salary > 40k");
+            (from user in accounts where user.getBalance() > 40000 select user).ToList().ForEach(user=> Console.WriteLine(user));
+
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            Console.WriteLine("User with salary < 20k");
+            (from user in accounts where user.getBalance() < 20000 select user).ToList().ForEach(user => Console.WriteLine(user));
+
+
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+
+            Console.WriteLine("All users");
+            (from user in accounts select user).ToList().ForEach(user =>Console.WriteLine(user));
+
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            //Display ID and name using anonymous object
+            Console.WriteLine("Diplay ID and Name using anonymous object");
+            (from user in accounts select new { ID = user.ID, Name = user.Name}).ToList().ForEach(user => Console.WriteLine(user));
+
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+
+            //Display min and max balance
+            Console.WriteLine("Min Balance = " + (from minBalance in accounts select minBalance.getBalance()).Min());
+
+            Console.WriteLine("Max Balance = " + (from maxBalance in accounts select maxBalance.getBalance()).Max());
+
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

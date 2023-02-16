@@ -1,0 +1,12 @@
+1. In Java we have a 'clone' method in Object class which was protected, so we have to override it and then
+   clone. (Cloning done in main method)
+
+2. Here we have 'memberWiseClone' method in Object class, it is also protected, but it is not virtual so we 
+   cannot override it.
+
+3. We can either make our own method which we can call and do the cloning inside this method, or we can
+   implement 'ICloneable' interface and override its 'Clone' method, inside this method we can use 
+   'memberWiseClone'
+
+
+	One more reason why C# is bullshit

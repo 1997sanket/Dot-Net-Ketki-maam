@@ -1,0 +1,21 @@
+1. Short for Language integrated query.
+
+2. It is query language which can be used on any Data source like Collections, Array, Database, XML.
+
+3. Syntax is similar to SQL. Eg:
+
+	var result = from x in mylist where x.Name.Contains("v") select x; 
+
+4. This is just the query. It is not fired yet.
+
+	var resultX = result.ToList();	//This will actually fire and get result
+
+5. This is called as Deferred Execution.
+
+
+6. We can also use Extension Methods instead of using the query. For eg above example can be written in 
+   methods like
+
+	var result = mylist.Where(x=>x.Contains("v").Select(x=> x);
+
+	var resultX = mylist.ToList();

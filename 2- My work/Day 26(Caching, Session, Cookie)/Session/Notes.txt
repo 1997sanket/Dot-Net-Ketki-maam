@@ -1,0 +1,10 @@
+1. Same old concept of session. 
+
+2. It is unique for each user.
+
+3. Remember in Java, how we created a session for the user, and whatever 
+   items he put in the shopping cart, we put those items in the arraylist 
+   and store that arraylist in the session object and thus we could display
+   that arraylist in the checkout page.
+
+4. Session internally uses cookies.

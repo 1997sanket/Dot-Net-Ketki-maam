@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Practice_VS_2012
+{
+
+   
+
+    //Main class
+    public class Program
+    {
+        
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Enter no");
+
+            int i = int.Parse(Console.ReadLine());
+
+            Object o = i;   //Boxing
+
+            Console.WriteLine(o);
+
+            Console.ReadLine();
+
+        }
+    }
+}

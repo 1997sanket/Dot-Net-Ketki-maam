@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Practice_VS_2012
+{
+    
+
+
+    //Main class
+    public class Program
+    {
+        class SwapDemo
+        {
+            public static void swap(ref int x, ref int y)
+            {
+
+                int temp = x;
+                x = y;
+                y = temp;
+
+            }
+        }
+
+
+        static void Main(string[] args)
+        {
+            int x = 10, y = 20;
+
+            SwapDemo.swap(ref x, ref y);
+
+            Console.WriteLine(x + " " + y);
+
+            Console.ReadLine();
+
+        }
+    }
+}

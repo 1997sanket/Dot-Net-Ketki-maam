@@ -1,0 +1,7 @@
+1. foreach internally uses Enumerator
+
+2. const example : min and max value of datatypes in framework, Total no of seats in DAC course. Internally
+		   it is static.
+
+3. readonly example	: Array 'Length' in .Net framework, Rate of interest taken from RBI.
+	

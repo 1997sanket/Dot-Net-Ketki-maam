@@ -1,0 +1,6 @@
+1. These are imporatant objects.
+
+2. Because suppose in our WEB app we have a product table in our database, it has suppose 20 properties
+   (instance memebers like colour, shape, size....) and we have a requirement to display only colour and 
+   size, So instead of sending the entire object with all 20 propertires we can just make an anonymous 
+   object with only 2 properties and return it.

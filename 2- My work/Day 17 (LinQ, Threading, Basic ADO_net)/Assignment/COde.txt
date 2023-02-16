@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+
+using System.Data.SqlClient;
+
+namespace Practice_VS_2012
+{
+    
+
+   
+    public class Program
+    {
+
+        static void Main(string[] args)
+        {
+           
+            //Address of database
+            String conString = @"Data Source=(localdb)\Projects;Initial Catalog=mydb;Integrated Security=True";
+
+            //Connection object
+            using(SqlConnection connection = new SqlConnection(conString))
+            {
+                
+                //Query
+                SqlCommand command  = new SqlCommand("select * from Employee", connection);
+
+                //Open connection
+                connection.Open();
+
+                //Get data in reader
+               SqlDataReader reader =  command.ExecuteReader();
+
+                //If reader has retrieved any Data ?
+               if (reader.HasRows)
+               {
+                   Console.WriteLine("Records retrieved");
+                   
+                   //Set pointer on first record
+                   while (reader.Read())
+                   {
+                       Console.WriteLine("ID : {0}      Name : {1}      Salary : {2}", reader["Id"], reader["Name"], reader["Salary"]);
+                   }
+               }
+
+            }
+
+            
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

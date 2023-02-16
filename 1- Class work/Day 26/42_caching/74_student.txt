@@ -1,0 +1,73 @@
+ we will discuss creating CacheProfiles. 
+
+  
+
+To cache the data returned by Index() action method, for 60 seconds, we would use [OutputCache] attribute as shown below.
+[OutputCache(Duration=60)]
+public ActionResult Index()
+{
+    return View(db.Employees.ToList());
+}
+
+
+  
+
+In the example above, the OutputCache settings are specified in code. The disadvantage of this approcah is that
+1. If you have to apply the same cache settings, to several methods, then the code needs to be duplicated.
+2. Later, if we have to change these cache settings, then we need to change them at several places. Maintaining the code becomes complicated. Also, changing the application code requires build and re-deployment.
+
+To overcome these disadvantages, cache settings can be specified in web.config file using cache profiles.
+Step 1: Specify cache settings in web.config using cache profiles
+<system.web>
+  <caching>
+    <outputCacheSettings>
+      <outputCacheProfiles>
+        <clear/>
+        <add name="1MinuteCache" duration="60" varyByParam="none"/>            
+      </outputCacheProfiles>
+    </outputCacheSettings>
+  </caching>
+</system.web>
+
+Step 2: Reference the cache profile in application code
+[OutputCache(CacheProfile = "1MinuteCache")]
+public ActionResult Index()
+{
+    return View(db.Employees.ToList());
+}
+
+The cache settings are now read from one central location i.e from the web.config file. The advantage of using cache profiles is that
+1. You have one place to change the cache settings. Mantainability is much easier.
+2. Since the changes are done in web.config, we need not build and redeploy the application.
+
+
+
+
+
+
+
+
+
+
+====================================================
+VaryByParam 
+=========================================================
+
+If you want to implement different cache versions of the output based on some input parameters then you need to use the VarByParam option of the OutputCache attribute. For example, we have a detailed action method which will display the employee details based on the employee id. That means this method takes employee id as the input parameter and based on that input parameter it displays that employee information. Now we want to create a different cache version of the details view based on the employee id.
+
+In situations like above, we can make use of the VaryByParam option of the OutputCache attribute. This VaryByParam property creates a different cached version of the same content when a form parameter or query string parameter varies. Following is the implementation of Details action.
+cache only one record by id
+[OutputCache(Duration =20, VaryByParam = "id")]
+public ActionResult Details(int? id)
+{
+    if (id == null)
+    {
+        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+    }
+    Employee employee = db.Employees.Find(id);
+    if (employee == null)
+    {
+        return HttpNotFound();
+    }
+    return View(employee);
+}

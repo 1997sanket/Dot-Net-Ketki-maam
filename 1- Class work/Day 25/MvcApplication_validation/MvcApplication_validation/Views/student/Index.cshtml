@@ -1,0 +1,120 @@
+﻿@model MvcApplication_validation.Models.Student
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<fieldset>
+    <legend>Student</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DOB)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DOB)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.birthtime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.birthtime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Postalcode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Postalcode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Mobile)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mobile)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fees)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fees)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Photo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Photo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ConfirmEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ConfirmEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.websitename)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.websitename)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.creditcard)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.creditcard)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.imageurl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.imageurl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.hobbyhtml)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.hobbyhtml)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

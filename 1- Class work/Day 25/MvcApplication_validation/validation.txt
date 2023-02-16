@@ -1,0 +1,107 @@
+
+[Display(Name="N A M E")]
+
+[Required(ErrorMessage = "The Sale Price field is required.")]
+
+[DataType(DataType.Date)]
+
+[DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+
+
+ [Range(10, 1000, 
+        ErrorMessage = "Value for {0} must be between {1} and {2}.")]
+
+ [Range(typeof(DateTime), "1/2/2004", "3/4/2004",
+        ErrorMessage = "Value for {0} must be between {1} and {2}")]
+
+
+[Required(ErrorMessage = "Email is required")]
+
+[DataType(DataType.EmailAddress)]
+
+
+
+[Display(Name = "E-mail")]
+public string Email{ get; set; }
+
+
+
+
+
+
+
+
+Data Annotation Validator Attributes
+
+    DataType
+
+    Specify the datatype of a property
+
+    DisplayName
+    specify the display name for a property.
+
+    DisplayFormat
+    specify the display format for a property like different format for Date proerty.
+    
+   Required
+    Specify a property as required.
+    
+   ReqularExpression [A-Za-z0-9]{8}{15}
+    validate the value of a property by specified regular expression pattern.
+    
+   Range
+    validate the value of a property with in a specified range of values.
+    
+StringLength
+    specify min and max length for a string property.
+
+
+    MaxLength
+    specify max length for a string property.
+
+    Bind
+    specify fields to include or exclude when adding parameter or form values to model properties.
+
+    ScaffoldColumn
+    specify fields for hiding from editor forms.
+
+Designing the model with Data Annotations
+
+     
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+    namespace Employee.Models
+    {
+     [Bind(Exclude = "EmpId")]
+     public class Employee
+     {
+     [ScaffoldColumn(false)]
+     public int EmpId { get; set; }
+     
+ [Display(Name="Employee Name")]
+     [DisplayName("Employee Name")]
+     [Required(ErrorMessage = "Employee Name is required")]
+     [StringLength(100,MinimumLength=3)]
+     public String EmpName { get; set; } 
+     
+     [Required(ErrorMessage = "Employee Address is required")] 
+     [StringLength(300)]
+     public string Address { get; set; } 
+     
+     [Required(ErrorMessage = "Salary is required")] 
+     [Range(3000, 10000000,ErrorMessage = "Salary must be between 3000 and 10000000")]
+     public int Salary{ get; set; } 
+     
+     [Required(ErrorMessage = "Please enter your email address")] 
+     [DataType(DataType.EmailAddress)]
+     [Display(Name = "Email address")]
+     [MaxLength(50)]
+     [RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}", ErrorMessage = "Please enter correct email")]
+     public string Email { get; set; }
+
+
+ [Compare("Email")]
+    public string ConfirmEmail { get; set; }
+     }
+    }

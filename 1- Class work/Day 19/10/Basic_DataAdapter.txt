@@ -1,0 +1,7 @@
+The disconnected layer:
+
+allows you to manipulate a set of DataTable objects (contained within a DataSet) that functions as a client-side copy of the  external data. 
+
+When you obtain a DataSet using a related data adapter object, the connection is automatically opened and closed on your behalf. 
+
+As you would guess, this approach helps free up connections for other callers quickly and goes a long way toward increasing the scalability of  your systems

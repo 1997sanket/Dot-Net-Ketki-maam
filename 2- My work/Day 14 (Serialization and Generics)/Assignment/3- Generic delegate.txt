@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Banking;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Soap;
+
+namespace Practice_VS_2012
+{
+ 
+    //Generic delegate
+    delegate T MyDelegate<T>(T x);
+    
+    public class Program
+    {
+        static int sqr(int x)
+        {
+            return x * x;
+        }
+
+        static double cube(double x)
+        {
+            return x * x * x;
+        }
+       
+
+        static void Main(string[] args)
+        {
+
+            MyDelegate<int> ob1 = new MyDelegate<int>(sqr);
+
+            MyDelegate<double> ob2 = new MyDelegate<double>(cube);
+
+            Console.WriteLine(ob1(2));
+
+
+            Console.WriteLine(ob2(2));
+
+
+            Console.ReadLine();
+
+        }
+
+
+
+    }
+}

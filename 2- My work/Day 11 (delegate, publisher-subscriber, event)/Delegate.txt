@@ -1,0 +1,47 @@
+1. 'Delegate' - A person who is representing someone else.
+
+2. So here delegate is like a function pointer of C.
+
+3. We can refer to some method, and call that method with using our reference
+
+4. Eg :
+		static void method1(int a) {
+
+			CW(a);
+		}
+
+		static void method2(int b) {
+
+			CW(b);
+		}
+
+		delegate void mYDelegate(int x); //return type and parameter is same as the method
+
+		main() {
+	
+			//Regestring method 1
+			myDelegate ob = new myDelegate(method1);	//Passing name of method as parameter
+
+			
+			//Internally creates arrays of these methods. And when delegate is called all methods
+			//are called
+			ob += new myDelegate(method2);	//MultiCast delegate
+			
+						
+			ob(10); //Calling that method with our reference
+		}
+
+
+
+5. So what is the use of doing things like this ?? 
+
+	Suppose in a banking application, we want to send message to the account holder, whenever money is 
+        withdraw. Just by using a 'delegate' object we can call multiple methods who are subscribed to 
+	to our delegate.
+	
+
+6. If its a static method, then just 'ClassName.methodName', if its an instance method then create object and 
+   pass method name using '.' operator.
+	
+
+7. Multicast delegate is nothing but array of methods which will  be invoked when we invoke the delegate

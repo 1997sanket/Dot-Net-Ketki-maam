@@ -1,0 +1,26 @@
+1. Assembly is nothing but the project we make. We either make console project(.exe) file or Class library
+   project (So other programs can use our dll to use our classes)
+
+2. Versioning :
+
+	a) Suppose we download and install a game. We get .dll files with the game. But when we update the
+	   game, we get another .dll file along with it. If versioning didn't exist, our new DLL file would
+	   replace the old one. But what if we want to use the old one as well, this is where versioning
+	   comes into picture. Because of versioning we get a different DLL file with different version number
+	   and our existing dll file still exists with older version number.
+
+
+	b) Simple relatable example would be suppos we make a DLL having MyClass with sqr() method and give
+	   to the client. After someday I edit this class and add a method cube() as well, and now give this 
+	   new DLL to the client. So because of versioning client can have 2 DLL files and he can use 
+	   whatever he wants.
+
+
+
+
+
+
+
+[assembly: AssemblyKeyFile("CalcSnk.snk")]	//Add this in dll assembly
+
+gacutil -i Banking.dll	//command to add in GAC

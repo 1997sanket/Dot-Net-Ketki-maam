@@ -1,0 +1,10 @@
+1. Console application with OOPS
+
+2. Console application with ADO.net
+
+3. MVC with basic read/write options
+
+4. WCF Rest api with Entity
+
+5. Web api rest with Entity
+

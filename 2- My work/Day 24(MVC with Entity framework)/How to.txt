@@ -1,0 +1,28 @@
+1. Create new MVC 4 application 
+
+2. Select Basic project
+
+3. Go to Models folder, select Add
+				 Data
+				    Ado.net entity data model
+
+4. Select Empty model
+
+5. Create models and association them if any (one to many, many to many etc)
+
+6. Generate database tables, check whether tables created or not
+
+7. Again rightclick on the architecture file and generate Model class 
+   Make sure .edmx file name is same (eg: Model1.edmx)
+
+8. Then we will have our DbContext class and all the POCO classes with 
+   the associations.
+
+9. Right click on controller folder and create new controller.
+
+10. Select "MVC controller with read/write actions and view using Entity 
+    Framework"
+
+11.Select Model class(Eg: Employee) and Data context class
+
+12. We will get all the default CRUD operations in the application ready.

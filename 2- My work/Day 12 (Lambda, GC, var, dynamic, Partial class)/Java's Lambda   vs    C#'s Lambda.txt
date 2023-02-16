@@ -1,0 +1,44 @@
+				Java Lambda								C# Lambda
+
+1.	Compact way of writing code						1.	Compact way of writing code.
+
+
+2.	Used with functional interface						2.	Used with delegate. (delegate here is same as functional
+													     interface of Java)
+
+
+3.	Instead of writing a Whole implementation				3.	Same, as in Java. We are defining, instantiating
+	class for the interface and then overriding					the class in the same line.
+	the method and then the interface reference 
+	will point to that implementation object,
+	we are doing all this in one line.
+
+
+4. 	Eg:									4.	Eg:
+		interface MyInterface {								delegate void MyDelegate();
+
+			void show();								main() {
+		}											
+													MyDelegate obj = () => CW("Hello");
+													
+													obj();	
+		main() {									}
+
+			MyInterface obj = () -> syso("Hello");
+
+			obj.show();
+		}
+
+
+
+5. 	Here "obj" can point to only 1 implementation/method.			5.	Here "obj" can point to multiple methods using 
+											MultiCast delegate
+											Eg :	
+												obj += () => CW("How are you");
+											Both these methods will be invoked when we invoke 
+											delegate reference.
+
+		
+6. "ref" and "out" keywords are not there.					6.	"ref" and "out" keyword cannot be used with lambda 
+											and anonymous method
+													

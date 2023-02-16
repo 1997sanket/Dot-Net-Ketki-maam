@@ -1,0 +1,7 @@
+1. In C# there is no "run()" method in an interface which gets called when we start a thread.
+
+2. Just like Java's Thread class has Runnable reference as argument in the constructor. C#'s Thread class 
+   has delegate called ThreadStart reference as argument in the constructor.
+
+3. So just like in Java, we can pass a lambda to in Thread constructor and thus when we call start this
+   method will be called.

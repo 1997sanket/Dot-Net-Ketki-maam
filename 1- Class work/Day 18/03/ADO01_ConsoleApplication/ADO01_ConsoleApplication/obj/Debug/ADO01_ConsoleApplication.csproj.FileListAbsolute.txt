@@ -1,0 +1,15 @@
+D:\practice_MVC\ADO01_ConsoleApplication\ADO01_ConsoleApplication\bin\Debug\ADO01_ConsoleApplication.exe.config
+D:\practice_MVC\ADO01_ConsoleApplication\ADO01_ConsoleApplication\bin\Debug\ADO01_ConsoleApplication.exe
+D:\practice_MVC\ADO01_ConsoleApplication\ADO01_ConsoleApplication\bin\Debug\ADO01_ConsoleApplication.pdb
+D:\practice_MVC\ADO01_ConsoleApplication\ADO01_ConsoleApplication\obj\Debug\ADO01_ConsoleApplication.exe
+D:\practice_MVC\ADO01_ConsoleApplication\ADO01_ConsoleApplication\obj\Debug\ADO01_ConsoleApplication.pdb
+D:\dot_net\Day_wise\day9\examples\00Console_ADO\02\ADO01_ConsoleApplication\ADO01_ConsoleApplication\bin\Debug\ADO01_ConsoleApplication.exe.config
+D:\dot_net\Day_wise\day9\examples\00Console_ADO\02\ADO01_ConsoleApplication\ADO01_ConsoleApplication\obj\Debug\ADO01_ConsoleApplication.exe
+D:\dot_net\Day_wise\day9\examples\00Console_ADO\02\ADO01_ConsoleApplication\ADO01_ConsoleApplication\obj\Debug\ADO01_ConsoleApplication.pdb
+D:\dot_net\Day_wise\day9\examples\00Console_ADO\02\ADO01_ConsoleApplication\ADO01_ConsoleApplication\bin\Debug\ADO01_ConsoleApplication.exe
+D:\dot_net\Day_wise\day9\examples\00Console_ADO\02\ADO01_ConsoleApplication\ADO01_ConsoleApplication\bin\Debug\ADO01_ConsoleApplication.pdb
+D:\dot_net\Day_wise\day9\examples\00Console_ADO\03\ADO01_ConsoleApplication\ADO01_ConsoleApplication\bin\Debug\ADO01_ConsoleApplication.exe.config
+D:\dot_net\Day_wise\day9\examples\00Console_ADO\03\ADO01_ConsoleApplication\ADO01_ConsoleApplication\obj\Debug\ADO01_ConsoleApplication.exe
+D:\dot_net\Day_wise\day9\examples\00Console_ADO\03\ADO01_ConsoleApplication\ADO01_ConsoleApplication\obj\Debug\ADO01_ConsoleApplication.pdb
+D:\dot_net\Day_wise\day9\examples\00Console_ADO\03\ADO01_ConsoleApplication\ADO01_ConsoleApplication\bin\Debug\ADO01_ConsoleApplication.exe
+D:\dot_net\Day_wise\day9\examples\00Console_ADO\03\ADO01_ConsoleApplication\ADO01_ConsoleApplication\bin\Debug\ADO01_ConsoleApplication.pdb
